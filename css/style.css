@@ -17,7 +17,10 @@ h1 {
     border-bottom: 1px solid #eee;
     text-transform: uppercase;
 }
-
+footer{
+    text-align: center;
+    width: 100%;
+}
 main {
     display: block;
     margin: 1em auto 2em;
