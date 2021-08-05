@@ -24,7 +24,7 @@
       <input v-model="todo" type="text" name="todo" id="todo">
       <button type="submit" name="button">Add</button>
     </form>
-    <ul v-if="todoArray.length > 0">
+    <ul v-if="todoArray.length">
       <li v-for="(todo, index) in todoArray">
         <div class="btns"><input @click="e=>addToLocalStorage(index, e)" type="checkbox" name="done"
             :id="'input-' + index" v-model="todo.done">
@@ -40,10 +40,12 @@
     <div>
       <span>Left todo: {{counter()}}</span>
       <span>Total: {{todoArray.length}}</span>
-      <button @click="allDone">All done</button>
+      <button v-show="todoArray.length" @click="allDone">All done</button>
     </div>
   </main>
-  <footer></footer>
+  <footer>
+    by Kostas Šliažas
+  </footer>
   <script src="js/vue.min.js"></script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script> -->
   <script src="js/app.js"></script>
