@@ -30,6 +30,13 @@ const app = new Vue({
       })
       typeof (Storage) !== 'undefined' && window.localStorage.setItem('todo-app', JSON.stringify(this.todoArray))
     },
+    allDFalse () {
+      this.todoArray.forEach(todo => {
+        todo.done = false
+        todo.timeFin = ''
+      })
+      typeof (Storage) !== 'undefined' && window.localStorage.setItem('todo-app', JSON.stringify(this.todoArray))
+    },
     counter () {
       return this.todoArray.filter(todo => {
         return todo.done === false
@@ -41,11 +48,13 @@ const app = new Vue({
         this.todoArray[index].done = elem.target.checked
         this.todoArray[index].timeFin = this.todoArray[index].done ? this.setTime() : ''
       }
-      // rewrite all local storage (this is fast anyway for this small project)
+      // rewrite all local storage
       typeof (Storage) !== 'undefined' && window.localStorage.setItem('todo-app', JSON.stringify(this.todoArray))
     },
     setTime () {
-      return new Date().toLocaleString('en-US', { hour12: false })
+      return new Date().toLocaleString('en-US', {
+        hour12: false
+      })
     }
   }
 })

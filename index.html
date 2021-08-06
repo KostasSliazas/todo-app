@@ -41,6 +41,7 @@
       <span>Left todo: {{counter()}}</span>
       <span>Total: {{todoArray.length}}</span>
       <button v-show="todoArray.length" @click="allDone">All done</button>
+      <button v-show="todoArray.length" @click="allDFalse">Not done</button>
     </div>
   </main>
   <footer>
