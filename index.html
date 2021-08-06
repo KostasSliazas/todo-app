@@ -29,11 +29,11 @@
         <div class="btns"><input @click="e=>addToLocalStorage(index, e)" type="checkbox" name="done"
             :id="'input-' + index" v-model="todo.done">
           <label span :class="{ done : todo.done }" :for="'input-' + index">{{todo.title}}
-            <span class="time" v-if="todo.timeAdd||todo.timeFin">
-              <span>{{todo.timeAdd}}</span>
-              <span>{{todo.timeFin}}</span>
-            </span>
           </label></div><button @click="e=>removeTodo(index, e)">remove</button>
+        <span class="time" v-if="todo.timeAdd||todo.timeFin">
+          <span>{{todo.timeAdd}}</span>
+          <span>{{todo.timeFin}}</span>
+        </span>
       </li>
     </ul>
     <h1 v-else>You have nothing to do 😀😁</h1>

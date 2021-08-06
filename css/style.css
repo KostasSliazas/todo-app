@@ -205,7 +205,7 @@ div {
     text-overflow: ellipsis;
 }
 
-ul li:hover .time {
+ul li button:hover ~ .time {
     opacity: 1;
     transition: .1s .2s opacity;
 }
