@@ -3,9 +3,12 @@ body {
     margin: 0;
     background: #eee;
     color: #556;
+}
+
+#wrap {
+    padding: 1em;
     display: flex;
     flex-direction: column;
-    height: 100vh;
     justify-content: space-between;
 }
 
@@ -23,8 +26,9 @@ h1 {
 }
 
 footer {
-    text-align: right;
+    text-align: center;
     padding: 1em;
+    font-size: .75em;
 }
 
 main {
@@ -85,7 +89,20 @@ ul li:not(:last-child) {
 ul li button {
     background: #e77;
 }
-
+ul li i {
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    margin: 0 4px;
+    border: 1px solid #777;
+    box-sizing: border-box;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-style: normal;
+    line-height: 2;
+    min-width: 24px;
+}
 .done {
     text-decoration: line-through;
 }
@@ -163,9 +180,12 @@ button {
     background: #aaa;
     min-width: 68px;
     box-sizing: border-box;
-    line-height: 2;
+    line-height: 3;
     color: #333;
     opacity: 0.9;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
 }
 
 button:hover {
@@ -211,7 +231,7 @@ div {
     text-overflow: ellipsis;
 }
 
-ul li button:hover~.time {
+ul li i:hover~.time {
     opacity: 1;
     transition: .1s .2s opacity;
 }
