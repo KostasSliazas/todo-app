@@ -144,7 +144,7 @@ ul li i {
 
 .btns label::before {
     border: 1px solid #333;
-    padding: 15px;
+    padding: 13px;
     background: #fff;
 }
 
@@ -154,7 +154,7 @@ ul li i {
     border-bottom: 1px solid transparent;
     transition: padding-right .1s, border-right-color 0s .2s;
     transform: rotate(45deg);
-    transform-origin: 25px 12px;
+    transform-origin: 25px 9px;
 }
 
 .btns input:checked~label::before {
@@ -274,6 +274,7 @@ ul li .time span:empty {
     align-items: center;
 }
 
-span {
+div>span {
     overflow: hidden;
+    font-size: .75em;
 }
