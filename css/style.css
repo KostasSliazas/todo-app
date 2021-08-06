@@ -269,7 +269,7 @@ ul li .time span:empty {
 }
 
 #app>h1 {
-    min-height: 200px;
+    min-height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
