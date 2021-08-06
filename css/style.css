@@ -3,6 +3,10 @@ body {
     margin: 0;
     background: #eee;
     color: #556;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
 }
 
 header {
@@ -18,8 +22,8 @@ h1 {
     text-transform: uppercase;
 }
 footer{
-    text-align: center;
-    width: 100%;
+    text-align: right;
+    padding: 1em;
 }
 main {
     display: block;
