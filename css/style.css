@@ -242,3 +242,10 @@ ul li button:hover ~ .time {
 ul li .time span:empty {
     display: none;
 }
+
+#app > h1 {
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
