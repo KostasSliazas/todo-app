@@ -291,4 +291,8 @@ div>span {
         box-sizing: border-box;
         font-size: 14px;
     }
+
+    #wrap {
+        max-width: initial;
+    }
 }
