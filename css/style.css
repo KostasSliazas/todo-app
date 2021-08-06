@@ -87,6 +87,7 @@ ul li:not(:last-child) {
 ul li button {
     background: #e77;
 }
+
 ul li i {
     width: 24px;
     height: 24px;
@@ -101,6 +102,7 @@ ul li i {
     line-height: 2;
     min-width: 24px;
 }
+
 .done {
     text-decoration: line-through;
 }
@@ -184,6 +186,7 @@ button {
     margin: 0;
     padding: 0;
     font-size: 14px;
+    max-height: 2em;
 }
 
 button:hover {
@@ -269,4 +272,8 @@ ul li .time span:empty {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+span {
+    overflow: hidden;
 }
