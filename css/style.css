@@ -21,10 +21,12 @@ h1 {
     border-bottom: 1px solid #eee;
     text-transform: uppercase;
 }
-footer{
+
+footer {
     text-align: right;
     padding: 1em;
 }
+
 main {
     display: block;
     margin: 1em auto 2em;
@@ -209,7 +211,7 @@ div {
     text-overflow: ellipsis;
 }
 
-ul li button:hover ~ .time {
+ul li button:hover~.time {
     opacity: 1;
     transition: .1s .2s opacity;
 }
@@ -243,7 +245,7 @@ ul li .time span:empty {
     display: none;
 }
 
-#app > h1 {
+#app>h1 {
     min-height: 200px;
     display: flex;
     justify-content: center;
