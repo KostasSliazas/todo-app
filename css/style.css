@@ -278,3 +278,17 @@ ul li .time span:empty {
 div>span {
     overflow: hidden;
 }
+
+@media (max-width: 576px) {
+
+    #todo,
+    input,
+    button {
+        line-height: 4;
+        max-height: initial;
+        line-height: 4;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+}
