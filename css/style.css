@@ -9,7 +9,7 @@ body {
     padding: 1em;
     flex-direction: column;
     margin: 0 auto;
-    max-width: max-content;
+    max-width: 700px;
 }
 
 header {
