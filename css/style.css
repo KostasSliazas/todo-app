@@ -88,8 +88,8 @@ ul li button {
     background: #e77;
 }
 
-ul li i {
-    width: 24px;
+i {
+    min-width: 24px;
     height: 24px;
     text-align: center;
     margin: 0 4px;
@@ -100,7 +100,7 @@ ul li i {
     border-radius: 50%;
     font-style: normal;
     line-height: 2;
-    min-width: 24px;
+    display: inline-block;
 }
 
 .done {
@@ -274,11 +274,16 @@ ul li .time span:empty {
     justify-content: center;
     align-items: center;
 }
-
+div>span i {
+    background: #fff;
+}
 div>span {
     overflow: hidden;
+    min-width: 96px;
 }
-
+div>span:last-child {
+    text-align: right;
+}
 @media (max-width: 576px) {
 
     #todo,

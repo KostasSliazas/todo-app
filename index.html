@@ -44,10 +44,10 @@
       </ul>
       <h1 v-else>You have nothing to do 😀😁</h1>
       <div>
-        <span>Total: {{todoArray.length}}</span>
+        <span><i>{{todoArray.length}}</i> :Total</span>
         <button v-show="todoArray.length" @click="allDone">All done</button>
         <button v-show="todoArray.length" @click="allDFalse">Not done</button>
-        <span>Left todo: {{counter()}}</span>
+        <span>Left todo: <i>{{counter()}}</i></span>
       </div>
     </main>
     <footer>
