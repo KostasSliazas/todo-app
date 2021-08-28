@@ -9,7 +9,7 @@ const app = new Vue({
   },
   methods: {
     addTodo () {
-      if (this.todo.length > 0) {
+      if (this.todo.trim().length > 0) {
         this.todoArray.push({
           title: this.todo,
           done: false,
