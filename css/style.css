@@ -40,14 +40,12 @@ main {
 }
 
 main form {
-    box-sizing: border-box;
     min-width: 0;
     white-space: nowrap;
     display: flex;
-    border: 1px solid #eee;
-    border-bottom: 0;
     box-sizing: border-box;
     align-items: center;
+    margin: 1px;
 }
 
 ul {
@@ -85,7 +83,7 @@ ul li:not(:last-child) {
 }
 
 ul li button {
-    background: #e77;
+    background: #842;
 }
 
 i {
@@ -93,7 +91,8 @@ i {
     height: 24px;
     text-align: center;
     margin: 0 4px;
-    border: 1px solid #777;
+    border: 1px solid #eee;
+    background: #fff;
     box-sizing: border-box;
     font-size: 12px;
     cursor: pointer;
@@ -143,7 +142,7 @@ i {
 }
 
 .btns label::before {
-    border: 1px solid #333;
+    border: 1px solid #eee;
     padding: 13px;
     background: #fff;
 }
@@ -162,7 +161,7 @@ i {
 }
 
 .btns input:checked~label::after {
-    border-color: #333;
+    border-color: #fff;
     padding: 8px;
     opacity: 1;
 }
@@ -175,18 +174,20 @@ i {
 }
 
 button {
+    font-family: 'Courier New', Courier, monospace;
     cursor: pointer;
-    border: 1px solid #333;
-    background: #aaa;
+    border: 0;
+    background: #557;
     min-width: 68px;
     box-sizing: border-box;
     line-height: 2;
-    color: #333;
+    color: #fff;
     opacity: 0.9;
     margin: 0;
-    padding: 0;
+    padding: 0 4px;
     font-size: 14px;
     max-height: 2em;
+    font-variant: small-caps;
 }
 
 button:hover {
@@ -203,7 +204,7 @@ label[for=todo] {
 }
 
 #todo {
-    border: 1px solid #777;
+    border: 1px solid #eee;
     min-width: 0;
     flex: 1 1 auto;
     line-height: 2;
@@ -274,16 +275,20 @@ ul li .time span:empty {
     justify-content: center;
     align-items: center;
 }
+
 div>span i {
     background: #fff;
 }
+
 div>span {
     overflow: hidden;
     min-width: 96px;
 }
+
 div>span:last-child {
     text-align: right;
 }
+
 @media (max-width: 576px) {
 
     #todo,

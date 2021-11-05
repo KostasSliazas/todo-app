@@ -25,7 +25,7 @@
       <form action="" @submit.prevent="addTodo">
         <label for="todo">Todo</label>
         <input v-model="todo" type="text" name="todo" id="todo">
-        <button type="submit" name="button">Add</button>
+        <button type="submit" name="button">add</button>
       </form>
       <ul v-if="todoArray.length">
         <li v-for="(todo, index) in todoArray">
@@ -45,8 +45,8 @@
       <h1 v-else>You have nothing to do 😀😁</h1>
       <div>
         <span><i>{{todoArray.length}}</i> :Total</span>
-        <button v-show="todoArray.length" @click="allDone">All done</button>
-        <button v-show="todoArray.length" @click="allDFalse">Not done</button>
+        <button v-show="todoArray.length" @click="allDone">all done</button>
+        <button v-show="todoArray.length" @click="allDFalse">not done</button>
         <span>Left todo: <i>{{counter()}}</i></span>
       </div>
     </main>
