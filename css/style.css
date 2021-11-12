@@ -218,12 +218,19 @@ label[for=todo] {
     padding: 0 4px;
 }
 
-div {
+.footer {
     display: flex;
     justify-content: space-between;
     margin: 1px;
 }
-
+svg {
+    max-width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    place-items: center;
+}
 .time {
     position: fixed;
     display: flex;
