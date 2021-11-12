@@ -57,10 +57,11 @@ ul {
 
 ul li {
     display: flex;
-    line-height: 2;
+    line-height: 1;
     border: 1px solid #eee;
     box-sizing: border-box;
     align-items: center;
+    max-height: 2em;
 }
 
 ul li:hover {
@@ -120,11 +121,11 @@ i {
 
 .btns label {
     cursor: pointer;
-    padding: 0 1em 0 2em;
+    padding: 0 1em 0 2.5em;
     min-width: 0;
     overflow: hidden;
     text-overflow: ellipsis;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     display: -webkit-box;
     flex: 1 1 auto;
@@ -157,7 +158,7 @@ i {
 }
 
 .btns input:checked~label::before {
-    background: #7e7;
+    background: #307230;
 }
 
 .btns input:checked~label::after {
@@ -186,7 +187,7 @@ button {
     margin: 0;
     padding: 0 4px;
     font-size: 14px;
-    max-height: 2em;
+    max-height: initial;
     font-variant: small-caps;
 }
 
@@ -290,12 +291,11 @@ div>span:last-child {
 }
 
 @media (max-width: 576px) {
-
+    ul li {max-height: none;}
+    #wrap,
+    main,
     #todo,
-    input,
     button {
-        line-height: 4;
-        max-height: initial;
         line-height: 4;
         padding: 0;
         box-sizing: border-box;
