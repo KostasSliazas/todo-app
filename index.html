@@ -42,7 +42,7 @@
           <button @click="e=>removeTodo(index, e)">remove</button>
         </li>
       </ul>
-      <h1 v-else>You have nothing to do 😀😁</h1>
+      <h1 v-else>Everything is done 😀😁</h1>
       <div>
         <span><i>{{todoArray.length}}</i> :Total</span>
         <button v-show="todoArray.length" @click="allDone">all done</button>
