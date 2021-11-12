@@ -58,7 +58,7 @@ ul {
 ul li {
     display: flex;
     line-height: 1;
-    border: 1px solid #eee;
+    border-top: 1px solid #eee;
     box-sizing: border-box;
     align-items: center;
     max-height: 2em;
@@ -79,8 +79,8 @@ ul li::before {
     min-width: 2em;
 }
 
-ul li:not(:last-child) {
-    border-bottom: 0;
+ul > li:last-child {
+    border-bottom: 1px solid #eee;
 }
 
 ul li button {
@@ -228,7 +228,7 @@ div {
     opacity: 0;
     top: 0;
     right: 0;
-    z-index: 1;
+    z-index: -1;
     background: #fff;
     box-shadow: 0 0 2px #777;
     padding: 1em;
@@ -241,6 +241,7 @@ div {
 ul li i:hover~.time {
     opacity: 1;
     transition: .1s .2s opacity;
+    z-index: 1
 }
 
 .time>span {
@@ -293,12 +294,12 @@ div>span:last-child {
 }
 
 @media (max-width: 576px) {
-    ul li {max-height: none;}
-    .btns {line-height: 4;}
+    .btns,
+    ul li {max-height: none;line-height: 4;}
     #wrap,
-    main,
     #todo,
     button {
+        line-height: 4;
         padding: 0;
         box-sizing: border-box;
         font-size: 14px;
