@@ -193,6 +193,7 @@ button {
     max-height: initial;
     font-variant: small-caps;
     border-radius: 2px;
+    letter-spacing: 1px;
 }
 
 button:hover {
