@@ -24,7 +24,7 @@
       </header>
       <form action="" @submit.prevent="addTodo">
         <label for="todo">Todo</label>
-        <input v-model="todo" type="text" name="todo" id="todo">
+        <input v-model="todo" type="text" name="todo" id="todo" placeholder="Type here...">
         <button type="submit" name="button">add</button>
       </form>
       <ul v-if="todoArray.length">
