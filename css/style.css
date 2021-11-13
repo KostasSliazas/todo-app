@@ -131,7 +131,6 @@ i {
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     display: -webkit-box;
-    flex: 1 1 auto;
     line-height: inherit;
 }
 
