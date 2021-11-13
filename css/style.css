@@ -154,8 +154,8 @@ i {
 
 .btns label::after {
     opacity: 0;
-    border-right: 1px solid transparent;
-    border-bottom: 1px solid transparent;
+    border-right: 2px solid transparent;
+    border-bottom: 2px solid transparent;
     transition: padding-right .1s, border-right-color 0s .2s;
     transform: rotate(45deg);
     transform-origin: 25px 9px;
