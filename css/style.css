@@ -10,6 +10,7 @@ body {
     flex-direction: column;
     margin: 0 auto;
     max-width: 700px;
+    overflow-x: hidden;
 }
 
 header {
@@ -307,13 +308,12 @@ div>span:last-child {
     #wrap,
     #todo,
     button {
-        line-height: 4;
-        padding: 0;
+        line-height: 3;
         box-sizing: border-box;
-        font-size: 14px;
     }
 
     #wrap {
+        padding: 0;
         max-width: initial;
     }
 }
