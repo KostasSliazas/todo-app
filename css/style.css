@@ -307,7 +307,7 @@ div>span:last-child {
         box-sizing: border-box;
     }
     label[for="todo"] {
-        max-width: 0;
+        width: 0;
     }
     #wrap {
         padding: 0;
