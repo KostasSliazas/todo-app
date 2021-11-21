@@ -7,22 +7,19 @@ body {
 
 #wrap {
     padding: 1em;
-    flex-direction: column;
     margin: 0 auto;
     max-width: 700px;
     overflow-x: hidden;
 }
 
 header {
-    text-align: center;
     color: #777575;
 }
 
 h1 {
     font-size: 1em;
     text-align: center;
-    margin-top: 0;
-    border-bottom: 1px solid #eee;
+    margin: 0;
     text-transform: uppercase;
 }
 
@@ -35,9 +32,10 @@ footer {
 main {
     display: block;
     background: #f7f7f7;
-    padding: 0 .25em .25em;
+    padding: .5em;
     box-shadow: 0 0 2px #777;
     user-select: none;
+    position: relative;
 }
 
 main form {
@@ -45,8 +43,9 @@ main form {
     white-space: nowrap;
     display: flex;
     box-sizing: border-box;
-    align-items: center;
-    margin: 1em 0;
+    place-items: center;
+    margin: 0;
+    line-height: 3;
 }
 
 ul {
@@ -58,9 +57,7 @@ ul {
 
 ul li {
     display: flex;
-    line-height: 1;
     border-top: 1px solid #eee;
-    box-sizing: border-box;
     align-items: center;
     font-variant: all-small-caps;
 }
@@ -76,8 +73,8 @@ ul li::before {
     box-sizing: border-box;
     text-align: right;
     padding: 0 .25em;
-    width: 2em;
     min-width: 2em;
+    max-width: 2em;
 }
 
 ul > li:last-child {
@@ -157,7 +154,7 @@ i {
     border-bottom: 2px solid transparent;
     transition: padding-right .1s, border-right-color 0s .2s;
     transform: rotate(45deg);
-    transform-origin: 25px 9px;
+    transform-origin: 26px 9px;
 }
 
 .btns input:checked~label::before {
@@ -201,10 +198,9 @@ button:hover {
 }
 
 label[for=todo] {
-    width: 32px;
-    padding: 0 .25em;
-    display: block;
-    font-size: 0;
+    max-width: 32px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #todo {
@@ -303,7 +299,7 @@ div>span:last-child {
 
 @media (max-width: 576px) {
     .btns,
-    ul li {max-height: none;line-height: 4;}
+    ul li {max-height: none;}
     #wrap,
     #todo,
     button {
