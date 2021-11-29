@@ -1,6 +1,7 @@
-const app = new Vue({
+const v = new Vue({
   el: '#app',
   data: {
+    lang: 'lt',
     title: 'Todo app',
     todo: '',
     timeAdd: '',
@@ -38,9 +39,7 @@ const app = new Vue({
       typeof (Storage) !== 'undefined' && window.localStorage.setItem('todo-app', JSON.stringify(this.todoArray))
     },
     counter () {
-      return this.todoArray.filter(todo => {
-        return todo.done === false
-      }).length
+      return this.todoArray.filter(todo => todo.done === false).length
     },
     addToLocalStorage (index, elem) {
       // if array exist (not deleted) set done at first
@@ -52,9 +51,8 @@ const app = new Vue({
       typeof (Storage) !== 'undefined' && window.localStorage.setItem('todo-app', JSON.stringify(this.todoArray))
     },
     setTime () {
-      return new Date().toLocaleString('en-US', {
-        hour12: false
-      })
+      const options = { hour: '2-digit', minute: '2-digit', hour12: false }
+      return (new Date()).toLocaleDateString(this.lang, options)
     }
   }
 })
