@@ -149,12 +149,11 @@ i {
 }
 
 .btns label::after {
-    opacity: 0;
     border-right: 2px solid transparent;
     border-bottom: 2px solid transparent;
     transition: padding-right .1s, border-right-color 0s .2s;
-    transform: rotate(45deg);
-    transform-origin: 26px 9px;
+    transform: rotate(55deg) skewX(25deg);
+    transform-origin: 21px 16px;
 }
 
 .btns input:checked~label::before {
@@ -163,8 +162,7 @@ i {
 
 .btns input:checked~label::after {
     border-color: #fff;
-    padding: 8px;
-    opacity: 1;
+    padding: 8px 4px;
 }
 
 .btn input:checked~label::after {
