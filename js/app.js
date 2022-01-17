@@ -1,4 +1,5 @@
-const v = new Vue({
+/* eslint-disable no-new */
+new Vue({
   el: '#app',
   data: {
     lang: 'lt',
@@ -53,6 +54,22 @@ const v = new Vue({
     setTime () {
       const options = { hour: '2-digit', minute: '2-digit', hour12: false }
       return (new Date()).toLocaleDateString(this.lang, options)
+    },
+    counterNumbers () {
+      const numArray = []
+      this.todoArray.forEach(todo => {
+        if (!isNaN(parseFloat(todo.title.replace(/[^\d\.]*/, '')))) {
+          numArray.push(parseFloat(todo.title.replace(/[^\d\.]*/, '')))
+        }
+      })
+      return numArray.reduce((a, b) => {
+        const n1 = a.toString().split('.')[1]
+        const n2 = b.toString().split('.')[1]
+        const len1 = (n1 && n1.length) || 0
+        const len2 = (n2 && n2.length) || 0
+        const num = a + b
+        return parseFloat(num.toFixed(len1 + len2))
+      }, 0)
     }
   }
 })
