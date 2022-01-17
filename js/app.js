@@ -60,14 +60,14 @@ new Vue({
       // push only numbers to array
       this.todoArray.forEach(todo => todo.done === false && !isNaN(parseFloat(todo.title.match(/[+-]?((?=\.?\d)\d*\.?\d*)/g)) && numArray.push(parseFloat(todo.title.match(/[+-]?((?=\.?\d)\d*\.?\d*)/g)))))
       // return sum of numbers
-      return numArray.reduce((a, b) => {
+      const sum = numArray.reduce((a, b) => {
         const n1 = a.toString().split('.')[1]
         const n2 = b.toString().split('.')[1]
         const len1 = (n1 && n1.length) || 0
         const len2 = (n2 && n2.length) || 0
-        const num = a + b
-        return parseFloat(num.toFixed(len1 + len2))
+        return parseFloat((a + b).toFixed(len1 + len2))
       }, 0)
+      return sum
     }
   }
 })
