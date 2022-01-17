@@ -13,7 +13,7 @@ new Vue({
     addTodo () {
       if (this.todo.trim().length > 0) {
         this.todoArray.push({
-          title: this.todo.replace(/,/g, '.').trim(),
+          todo: this.todo.replace(/,/g, '.').trim(),
           done: false,
           timeAdd: this.setTime()
         })
