@@ -342,9 +342,8 @@ div>span:last-child {
 
 #installContainer {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    right: 0;
     z-index: 1;
 }
 
