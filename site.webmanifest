@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "start_url": "/",
+    "start_url": "https://kostassliazas.github.io/todo-app/",
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
     "scope": "https://kostassliazas.github.io/todo-app/",
