@@ -3,12 +3,12 @@
     "short_name": "TODO",
     "icons": [
         {
-            "src": "https://github.com/KostasSliazas/todo-app/android-chrome-192x192.png",
+            "src": "https://raw.githubusercontent.com/KostasSliazas/todo-app/main/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "https://github.com/KostasSliazas/todo-app/android-chrome-512x512.png",
+            "src": "https://raw.githubusercontent.com/KostasSliazas/todo-app/main/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }
