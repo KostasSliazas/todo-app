@@ -59,11 +59,10 @@ new Vue({
       const numArray = []
       // push only numbers to array
       this.todoArray.forEach(e => {
-        if (!e.done && !isNaN(parseFloat(e.todo.match(/[+-]?((?=\.?\d)\d*\.?\d*)/g)))) {
+        if (!e.done && e.todo === 'undefined' && !isNaN(parseFloat(e.todo.match(/[+-]?((?=\.?\d)\d*\.?\d*)/g)))) {
           numArray.push(parseFloat(e.todo.match(/[+-]?((?=\.?\d)\d*\.?\d*)/g)))
         }
       })
-      console.log(numArray)
       // return sum of numbers
       const sum = numArray.reduce((a, b) => {
         const n1 = a.toString().split('.')[1]
