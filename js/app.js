@@ -57,11 +57,9 @@ new Vue({
     },
     counterNumbers () {
       const numArray = []
-      this.todoArray.forEach(todo => {
-        if (!isNaN(parseFloat(todo.title.replace(/[^\d\.]*/, '')))) {
-          numArray.push(parseFloat(todo.title.replace(/[^\d\.]*/, '')))
-        }
-      })
+      // push only numbers to array
+      this.todoArray.forEach(todo => !isNaN(parseFloat(todo.title.match(/[+-]?((?=\.?\d)\d*\.?\d*)/)) && numArray.push(parseFloat(todo.title.match(/[+-]?((?=\.?\d)\d*\.?\d*)/)))))
+      // return sum of numbers
       return numArray.reduce((a, b) => {
         const n1 = a.toString().split('.')[1]
         const n2 = b.toString().split('.')[1]
