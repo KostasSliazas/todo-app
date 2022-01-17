@@ -16,6 +16,6 @@
     "start_url": "/",
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
-    "scope": "/",
+    "scope": "https://kostassliazas.github.io/todo-app/",
     "display": "standalone"
 }
