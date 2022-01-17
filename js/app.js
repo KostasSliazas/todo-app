@@ -13,7 +13,7 @@ new Vue({
     addTodo () {
       if (this.todo.trim().length > 0) {
         this.todoArray.push({
-          title: this.todo,
+          title: this.todo.replace(/,/g, '.').trim(),
           done: false,
           timeAdd: this.setTime()
         })
@@ -58,7 +58,7 @@ new Vue({
     counterNumbers () {
       const numArray = []
       // push only numbers to array
-      this.todoArray.forEach(todo => !isNaN(parseFloat(todo.title.match(/[+-]?((?=\.?\d)\d*\.?\d*)/)) && numArray.push(parseFloat(todo.title.match(/[+-]?((?=\.?\d)\d*\.?\d*)/)))))
+      this.todoArray.forEach(todo => todo.done === false && !isNaN(parseFloat(todo.title.match(/[+-]?((?=\.?\d)\d*\.?\d*)/g)) && numArray.push(parseFloat(todo.title.match(/[+-]?((?=\.?\d)\d*\.?\d*)/g)))))
       // return sum of numbers
       return numArray.reduce((a, b) => {
         const n1 = a.toString().split('.')[1]
