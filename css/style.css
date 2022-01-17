@@ -351,7 +351,6 @@ div>span:last-child {
     border: 1px solid white;
     color: white;
     font-size: 1em;
-    padding: 0.75em;
 }
 
 @media all and (display-mode: standalone) {
