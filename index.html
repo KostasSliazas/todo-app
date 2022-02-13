@@ -94,10 +94,12 @@
         </svg>
       </div>
       <div class="footer">
-        <span><i>{{todoArray.length}}</i> :Total</span>
-        <span>Left todo: <i>{{counter()}}</i></span>
-        <span title="Total sum of entered numbers">Counter: <i>{{counterNumbers()}}</i>&euro;</span>
-        <!-- <button v-show="todoArray.length" @click="allDone">all done</button> -->
+        <span><i>{{todoArray.length}}</i> :total</span>
+        <span>left todo: <i>{{counter()}}</i></span>
+        <span title="Total sum of entered numbers">counter: <i>{{counterNumbers()}}</i>&euro;</span>
+      </div>
+      <div class="footer">
+        <button v-show="todoArray.length" @click="allDone">all done</button>
         <button v-show="todoArray.length" @click="allDFalse">uncheck all</button>
       </div>
     </main>
