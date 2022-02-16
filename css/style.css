@@ -1,12 +1,13 @@
 body {
     font: 16px/1.5 Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
     background: #f5f5f5;
-    color: #6c6c7c
+    color: #6c6c7c;
+    direction: rtl;
 }
 
 #wrap {
     padding: 1em;
-    margin: 0 auto;
+    direction: ltr;
     max-width: 700px;
     overflow-x: hidden
 }
@@ -52,7 +53,7 @@ main form {
     display: flex;
     box-sizing: border-box;
     place-items: center;
-    margin: 0;
+    margin: .5em 0;
     line-height: 3
 }
 
@@ -203,9 +204,7 @@ button:hover {
 }
 
 label[for=todo] {
-    max-width: 32px;
-    overflow: hidden;
-    text-overflow: ellipsis
+    display: none;
 }
 
 #todo,
@@ -326,10 +325,6 @@ div>span:last-child {
         box-sizing: border-box
     }
 
-    label[for=todo] {
-        width: 0
-    }
-
     #wrap {
         padding: 0;
         max-width: initial
@@ -355,6 +350,6 @@ div>span:last-child {
 
 @media all and (display-mode: standalone) {
     body {
-        background-color: #72723a;
+        background-color: #7c7c6b;
     }
 }
