@@ -1,6 +1,6 @@
 body {
     font: 16px/1.5 Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
-    background: #f5f5f5;
+    background: #eee;
     color: #6c6c7c;
     direction: rtl;
 }
@@ -351,5 +351,23 @@ div>span:last-child {
 @media all and (display-mode: standalone) {
     body {
         background-color: #7c7c6b;
+    }
+}
+
+@media print {
+
+    body,
+    main {
+        background: transparent;
+    }
+
+    i {
+        font-size: 0
+    }
+    footer,
+    .footer,
+    button,
+    #todo {
+        display: none;
     }
 }
