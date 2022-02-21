@@ -358,13 +358,11 @@ div>span:last-child {
 
     body,
     main {
+        box-shadow: none;
         background: transparent;
     }
 
-    i {
-        font-size: 0
-    }
-
+    i,
     h1,
     footer,
     .footer,
