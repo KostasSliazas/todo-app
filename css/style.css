@@ -355,14 +355,38 @@ div>span:last-child {
 }
 
 @media print {
-
-    body,
-    main {
-        box-shadow: none;
-        background: transparent;
+    page {
+        margin: 2cm
     }
 
-    i,
+    .btns,
+    body,
+    main {
+        font-size: 10pt;
+        box-shadow: none;
+        background: transparent;
+        line-height: 1.5;
+    }
+
+    ul li::before,
+    i {
+        order: -1;
+    }
+
+    i {
+        font-size: 0;
+    }
+
+    .btns label {
+        padding: 0 6pt
+    }
+
+    .done {
+        text-decoration: none;
+    }
+
+    .btns label::before,
+    .btns label::after,
     h1,
     footer,
     .footer,
