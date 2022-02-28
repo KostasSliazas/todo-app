@@ -173,7 +173,7 @@ i {
 .btns input:checked~label::after {
     border-color: #777;
     padding: 8px 4px;
-    transition: padding-right .1s, border-right-color 0s .2s linear;
+    transition: padding-right .1s, border-right-color 0s .1s linear;
 }
 
 .btn input:checked~label::after {

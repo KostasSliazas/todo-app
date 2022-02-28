@@ -96,7 +96,7 @@
       <div class="footer">
         <span><i>{{todoArray.length}}</i> :total</span>
         <span>left todo: <i>{{counter()}}</i></span>
-        <span title="Total sum of entered numbers">counter: <i>{{counterNumbers()}}</i>&euro;</span>
+        <span title="Total sum of entered numbers">counter: &euro;<i>{{counterNumbers()}}</i></span>
       </div>
       <div class="footer">
         <button v-show="todoArray.length" @click="allDone">all done</button>
