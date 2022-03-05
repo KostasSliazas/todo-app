@@ -167,11 +167,11 @@ i {
 }
 
 .btns input:checked~label::before {
-    background: #eee
+    background: #557
 }
 
 .btns input:checked~label::after {
-    border-color: #777;
+    border-color: #fff;
     padding: 8px 4px;
     transition: padding-right .1s, border-right-color 0s .1s linear;
 }
