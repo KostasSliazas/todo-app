@@ -1,8 +1,8 @@
 body {
     font: 16px/1.5 Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
-    background: #eee;
     color: #6c6c7c;
     direction: rtl;
+    background: #eee;
 }
 
 #wrap {
@@ -44,6 +44,7 @@ main {
     padding: .5em;
     box-shadow: 0 0 2px #aaa;
     user-select: none;
+    line-height: 2;
     position: relative
 }
 
@@ -54,7 +55,6 @@ main form {
     box-sizing: border-box;
     place-items: center;
     margin: .5em 0;
-    line-height: 3
 }
 
 ul {
@@ -76,7 +76,7 @@ ul li:hover {
 
 ul li::before {
     counter-increment: cou;
-    content: counter(cou)'.';
+    content: counter(cou) '.';
     display: block;
     box-sizing: border-box;
     text-align: right;
@@ -97,7 +97,7 @@ i {
     min-width: 24px;
     height: 24px;
     text-align: center;
-    margin: 0 4px;
+    margin: 4px;
     border: 1px solid #eee;
     background: #fff;
     box-sizing: border-box;
@@ -215,7 +215,7 @@ label[for=todo] {
 
 #todo,
 button {
-    line-height: 2;
+    line-height: inherit;
     padding: 0 4px
 }
 
@@ -303,12 +303,18 @@ ul li .time span:empty {
 }
 
 div>span {
-    overflow: hidden;
-    min-width: 96px
+    display: flex;
+    flex: 1 1 0;
+    min-width: 0;
 }
 
 div>span:last-child {
+    justify-content: end;
     text-align: right
+}
+
+div>span:nth-child(2) {
+    justify-content: center;
 }
 
 @media (max-width:576px) {
@@ -319,7 +325,7 @@ div>span:last-child {
     }
 
     #todo,
-    #wrap,
+    .footer:last-child,
     button {
         line-height: 3;
         box-sizing: border-box
