@@ -31,7 +31,7 @@
         <li v-for="(todo, index) in todoArray">
           <div class="btns"><input @click="e=>addToLocalStorage(index, e)" type="checkbox" name="done"
               :id="'input-' + index" v-model="todo.done">
-            <label span :class="{ done : todo.done }" :for="'input-' + index">{{todo.todo}}
+            <label :class="{ done : todo.done }" :for="'input-' + index">{{todo.todo}}
             </label>
           </div>
           <i>i</i>
