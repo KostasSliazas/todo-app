@@ -424,6 +424,8 @@ header~input[type=checkbox] {
         text-decoration: none;
     }
 
+    header+label,
+    header ~ input,
     .btns label::before,
     .btns label::after,
     h1,
