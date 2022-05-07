@@ -1,19 +1,24 @@
 body {
     font: 16px/1.5 Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
     color: #6c6c7c;
-    direction: rtl;
     background: #eee;
 }
 
 #wrap {
     padding: 1em;
-    direction: ltr;
+    margin: 0 auto;
     max-width: 700px;
     overflow-x: hidden
 }
 
+#app {
+    display: flex;
+    flex-direction: column;
+}
+
 header {
-    color: #777575
+    color: #fff;
+    background: #999;
 }
 
 body,
@@ -89,7 +94,8 @@ ul>li:last-child {
     border-bottom: 1px solid #eee
 }
 
-ul li button {
+ul li button,
+.danger {
     background: #842
 }
 
@@ -183,7 +189,6 @@ i {
 }
 
 button {
-    font-family: 'Courier New', Courier, monospace;
     cursor: pointer;
     border: 0;
     background: #557;
@@ -226,6 +231,7 @@ button {
 }
 
 .footer {
+    border-bottom: 3px solid #999;
     justify-content: space-between;
     margin: 1em 0
 }
@@ -315,6 +321,33 @@ div>span:last-child {
 
 div>span:nth-child(2) {
     justify-content: center;
+}
+
+.toggle label {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    color: #394a56;
+}
+
+.safety {
+    order: 1;
+    place-self: center;
+}
+
+header+label,
+header~input[type=checkbox] {
+    order: 2;
+    place-self: center;
+}
+
+.toggle-state:checked~ul li button,
+.toggle-state:checked~.safety button {
+    pointer-events: none;
+    background-color: #aaa;
 }
 
 @media (max-width:576px) {

@@ -51,7 +51,7 @@ if (window.location.protocol === 'http:') {
 }
 
 butInstall.addEventListener('click', async () => {
-  console.log('👍', 'butInstall-clicked')
+  // console.log('👍', 'butInstall-clicked')
   const promptEvent = window.deferredPrompt
   if (!promptEvent) {
     // The deferred prompt isn't available.
@@ -61,7 +61,7 @@ butInstall.addEventListener('click', async () => {
   promptEvent.prompt()
   // Log the result
   const result = await promptEvent.userChoice
-  console.log('👍', 'userChoice', result)
+  // console.log('👍', 'userChoice', result)
   // Reset the deferred prompt variable, since
   // prompt() can only be called once.
   window.deferredPrompt = null
@@ -69,7 +69,7 @@ butInstall.addEventListener('click', async () => {
   divInstall.classList.toggle('hidden', true)
 })
 window.addEventListener('appinstalled', (event) => {
-  console.log('👍', 'appinstalled', event)
+  // console.log('👍', 'appinstalled', event)
   // Clear the deferredPrompt so it can be garbage collected
   window.deferredPrompt = null
 })
@@ -126,7 +126,11 @@ new Vue({
       typeof (Storage) !== 'undefined' && window.localStorage.setItem('todo-app', JSON.stringify(this.todoArray))
     },
     setTime () {
-      const options = { hour: '2-digit', minute: '2-digit', hour12: false }
+      const options = {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+      }
       return (new Date()).toLocaleDateString(this.lang, options)
     },
     counterNumbers () {
@@ -145,6 +149,10 @@ new Vue({
         const len2 = (n2 && n2.length) || 0
         return parseFloat((a + b).toFixed(len1 + len2))
       }, 0)
+    },
+    clearLocalStorage () {
+      window.localStorage.clear()
+      window.location.reload()
     }
   }
 })
