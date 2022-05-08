@@ -22,8 +22,9 @@
       <header>
         <h1>{{title}}</h1>
       </header>
-      <label for="adm">safe mode</label>
-      <input class="toggle-state" type="checkbox" id="adm" name="check" checked>
+      <span id="safemode">safe mode</span>
+      <input class="toggle-state" type="checkbox" id="adm" name="check" checked switch="none">
+      <label for="adm" data-on-label="On" data-off-label="Off"></label>
       <div class="safety" v-if="todoArray.length">
         <button @click="allDone">all done</button>
         <button @click="allDFalse">uncheck all</button>
