@@ -336,6 +336,15 @@ div>span:nth-child(2) {
 .safety {
     order: 1;
     place-self: center;
+    text-align: center;
+}
+
+.safety button {
+    margin: 4px;
+}
+
+.safety:not(button) {
+    font-size: 0
 }
 
 header+label,
@@ -425,7 +434,7 @@ header~input[type=checkbox] {
     }
 
     header+label,
-    header ~ input,
+    header~input,
     .btns label::before,
     .btns label::after,
     h1,
