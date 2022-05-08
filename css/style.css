@@ -54,6 +54,7 @@ input[switch]+label {
     top: .25em;
     left: .25em;
     font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 1px 0 #777 inset, 0 -1px 0 #eee inset;
 }
 
 input[switch]:checked+label::before {
@@ -98,9 +99,7 @@ input[switch]+label::after {
 }
 
 input[switch]:checked+label {
-    background-color: lightblue;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.2));
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3) inset;
+    background: #59d113;
 }
 
 body,
