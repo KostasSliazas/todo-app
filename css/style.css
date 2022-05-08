@@ -440,7 +440,7 @@ header~input[type=checkbox] {
     ul li {
         max-height: none
     }
-
+    ul li,
     #todo,
     .footer:last-child,
     button {
