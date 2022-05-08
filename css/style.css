@@ -431,6 +431,7 @@ header~input[type=checkbox] {
 
 .toggle-state:checked~.safety {
     visibility: hidden;
+    z-index: -1;
 }
 
 @media (max-width:576px) {
@@ -506,6 +507,7 @@ header~input[type=checkbox] {
     .done {
         text-decoration: none;
     }
+
     #safemode,
     input[switch]+label,
     header+label,

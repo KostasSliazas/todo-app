@@ -28,8 +28,8 @@
       <div class="safety" v-if="todoArray.length">
         <button @click="allDone">all done</button>
         <button @click="allDFalse">uncheck all</button>
-        <button class="danger" @click="removeAllChecked()">remove checked</button>
         <button class="danger" @click="clearLocalStorage()">remove all</button>
+        <button class="danger" @click="removeAllChecked()">remove checked</button>
       </div>
       <form action="" @submit.prevent="addTodo">
         <label for="todo">Todo</label>
