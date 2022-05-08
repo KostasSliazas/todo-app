@@ -17,20 +17,15 @@ body {
 }
 
 #safemode {
-    z-index: 1;
-    margin: 0 4em;
-    color: #fff;
-    line-height: 1.5em;
-    font-size: .75em;
+    position: absolute;
+    left: 4em;
+    top: 0;
 }
 
 header {
     color: #fff;
     background: #999;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    left: 0;
+    position: relative;
 }
 
 input[switch] {
@@ -51,8 +46,8 @@ input[switch]+label {
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2) inset;
     transition: all 0.1s ease-in-out;
     position: absolute;
-    top: .25em;
-    left: .25em;
+    top: .75em;
+    left: .75em;
     font-family: Arial, Helvetica, sans-serif;
     box-shadow: 0 1px 0 #777 inset, 0 -1px 0 #eee inset;
 }
@@ -125,7 +120,6 @@ footer {
 }
 
 main {
-    display: block;
     background: #f9f9f9;
     padding: .5em;
     box-shadow: 0 0 2px #aaa;
@@ -140,7 +134,7 @@ main form {
     display: flex;
     box-sizing: border-box;
     place-items: center;
-    margin: 2em 0 .5em;
+    margin: 0 0 .5em;
 }
 
 ul {
@@ -314,7 +308,6 @@ button {
 .footer {
     border-bottom: 3px solid #999;
     justify-content: space-between;
-    margin: 1em 0
 }
 
 .footer,
@@ -415,7 +408,6 @@ div>span:nth-child(2) {
 }
 
 .safety {
-    order: 1;
     place-self: center;
     text-align: center;
 }
@@ -430,14 +422,15 @@ div>span:nth-child(2) {
 
 header+label,
 header~input[type=checkbox] {
-    order: 2;
     place-self: center;
 }
 
-.toggle-state:checked~ul li button,
-.toggle-state:checked~.safety button {
-    pointer-events: none;
-    background-color: #aaa;
+.toggle-state:checked~ul li button {
+    display: none;
+}
+
+.toggle-state:checked~.safety {
+    visibility: hidden;
 }
 
 @media (max-width:576px) {
@@ -513,7 +506,8 @@ header~input[type=checkbox] {
     .done {
         text-decoration: none;
     }
-
+    #safemode,
+    input[switch]+label,
     header+label,
     header~input,
     .btns label::before,
