@@ -22,16 +22,17 @@
       <header>
         <h1>{{title}}</h1>
       </header>
-      <label for="adm">Safe mode</label>
-      <input class="toggle-state" type="checkbox" id="adm" name="check" checked="">
-      <div class="safety">
-      <button v-show="todoArray.length" @click="allDone">all done</button>
-      <button v-show="todoArray.length" @click="allDFalse">uncheck all</button>
-      <button v-show="todoArray.length" class="danger" @click="clearLocalStorage()">remove all</button>
+      <label for="adm">safe mode</label>
+      <input class="toggle-state" type="checkbox" id="adm" name="check" checked>
+      <div class="safety" v-if="todoArray.length">
+        <button @click="allDone">all done</button>
+        <button @click="allDFalse">uncheck all</button>
+        <button class="danger" @click="removeAllChecked()">remove checked</button>
+        <button class="danger" @click="clearLocalStorage()">remove all</button>
       </div>
       <form action="" @submit.prevent="addTodo">
         <label for="todo">Todo</label>
-        <input v-model="todo" type="text" name="todo" id="todo" placeholder="Type here...">
+        <input v-model="todo" @change="flag = true" type="text" name="todo" id="todo" placeholder="Type here...">
         <button type="submit" name="button">add</button>
       </form>
       <ul v-if="todoArray.length">

@@ -73,7 +73,7 @@ window.addEventListener('appinstalled', (event) => {
   // Clear the deferredPrompt so it can be garbage collected
   window.deferredPrompt = null
 })
-new Vue({
+const vm = new Vue({
   el: '#app',
   data: {
     lang: 'lt',
@@ -81,6 +81,7 @@ new Vue({
     todo: '',
     timeAdd: '',
     timeFin: '',
+    flag: false,
     todoArray: typeof (Storage) !== 'undefined' ? JSON.parse(window.localStorage.getItem('todo-app')) || [] : []
   },
   methods: {
@@ -152,7 +153,27 @@ new Vue({
     },
     clearLocalStorage () {
       window.localStorage.clear()
-      window.location.reload()
+      this.todoArray = []
+    },
+    removeAllChecked () {
+      vm.todoArray = this.todoArray.filter(e => typeof e.done !== 'undefined' && !e.done).map(e => {
+        return e
+      })
+      this.addToLocalStorage()
+    }
+  },
+  computed: {
+    get: function () {
+      return this.todoArray
+    },
+    set: function (newVal) {
+      this.todoArray = newVal
+    }
+  },
+  watch: {
+    flag () {
+      window.setTimeout(() => document.getElementById('todo').focus(), 60)
+      this.flag = false
     }
   }
 })
