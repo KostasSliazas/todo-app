@@ -435,14 +435,21 @@ header~input[type=checkbox] {
 }
 
 @media (max-width:576px) {
+    .safety {
+        order: 1;
+    }
+
+    #safemode {
+        display: none
+    }
 
     .btns,
     ul li {
         max-height: none
     }
+
     ul li,
     #todo,
-    .footer:last-child,
     button {
         line-height: 3;
         box-sizing: border-box
