@@ -276,7 +276,27 @@ button {
     max-height: initial;
     font-variant: small-caps;
     border-radius: 2px;
+    margin: 0 4px;
     letter-spacing: 1px
+}
+
+.safety button {
+    margin: 4px;
+}
+
+#editor {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    place-content: center;
+    place-items: center;
+    text-align: center;
+    background:rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
@@ -407,13 +427,14 @@ div>span:nth-child(2) {
     color: #394a56;
 }
 
+.white {
+    padding: 3em;
+    background: #fff;
+}
+
 .safety {
     place-self: center;
     text-align: center;
-}
-
-.safety button {
-    margin: 4px;
 }
 
 .safety:not(button) {
@@ -461,7 +482,7 @@ header~input[type=checkbox] {
     }
 }
 
-.hidden {
+#wrap .hidden {
     display: none;
 }
 

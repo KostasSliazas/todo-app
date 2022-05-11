@@ -82,6 +82,7 @@ const vm = new Vue({
     timeAdd: '',
     timeFin: '',
     flag: false,
+    index: 0,
     todoArray: typeof (Storage) !== 'undefined' ? JSON.parse(window.localStorage.getItem('todo-app')) || [] : []
   },
   methods: {
@@ -160,6 +161,20 @@ const vm = new Vue({
         return e
       })
       this.addToLocalStorage()
+    },
+    edit (index) {
+      this.index = index
+      this.$el.querySelector('#editor').classList.remove('hidden')
+      this.$el.querySelector('#edit').value = this.todoArray[index].todo
+      this.$el.querySelector('#edit').focus()
+    },
+    save () {
+      this.todoArray[this.index].todo = this.$el.querySelector('#edit').value
+      this.addToLocalStorage()
+      this.hide()
+    },
+    hide () {
+      this.$el.querySelector('#editor').classList.add('hidden')
     }
   },
   computed: {

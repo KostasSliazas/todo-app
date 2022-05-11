@@ -21,10 +21,10 @@
     <main id="app">
       <header>
         <h1>{{title}}</h1>
-        <span id="safemode">safe mode</span>
+        <span v-if="todoArray.length" id="safemode">safe mode</span>
       </header>
-      <input class="toggle-state" type="checkbox" id="adm" name="check" checked switch="none">
-      <label for="adm" data-on-label="On" data-off-label="Off"></label>
+      <input switch="none" class="toggle-state" type="checkbox" id="adm" name="check" checked>
+      <label v-if="todoArray.length" for="adm" data-on-label="On" data-off-label="Off"></label>
       <div class="safety" v-if="todoArray.length">
         <button @click="allDone">all done</button>
         <button @click="allDFalse">uncheck all</button>
@@ -49,12 +49,12 @@
             <span>{{todo.timeAdd}}</span>
             <span>{{todo.timeFin}}</span>
           </span>
+          <button @click="e=>edit(index, e)">edit</button>
           <button @click="e=>removeTodo(index, e)">remove</button>
         </li>
       </ul>
       <div v-else>
         <h1>Everything is done or nothing was added</h1>
-        <?xml version="1.0" encoding="UTF-8"?>
         <svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg"
           xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink"
           xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg"
@@ -124,15 +124,22 @@
         <span>left todo: <i>{{counter()}}</i></span>
         <span title="Total sum of entered numbers">counter: &euro;<i>{{counterNumbers()}}</i></span>
       </div>
+      <div id="editor" class="hidden">
+        <div class="white">
+          <label for="edit">Edit</label>
+          <input type="text" name="edit" id="edit">
+          <button @click="save()">save</button><button @click="hide()">cancel</button>
+        </div>
+      </div>
     </main>
     <footer>
       by Kostas Šliažas
     </footer>
-  </div>
-  <div id="installContainer" class="hidden">
-    <button id="butInstall" type="button">
-      Install
-    </button>
+    <div id="installContainer" class="hidden">
+      <button id="butInstall" type="button">
+        Install
+      </button>
+    </div>
   </div>
   <script src="js/vue.min.js"></script>
   <script src="js/app.min.js"></script>
