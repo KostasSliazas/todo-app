@@ -169,8 +169,10 @@ const vm = new Vue({
       this.$el.querySelector('#edit').focus()
     },
     save () {
-      this.todoArray[this.index].todo = this.$el.querySelector('#edit').value
-      this.addToLocalStorage()
+      if (this.todoArray[this.index].todo !== this.$el.querySelector('#edit').value) {
+        this.todoArray[this.index].todo = this.$el.querySelector('#edit').value
+        this.addToLocalStorage()
+      }
       this.hide()
     },
     hide () {
