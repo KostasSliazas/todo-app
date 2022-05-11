@@ -126,11 +126,12 @@
       </div>
       <div id="editor" class="hidden">
         <div class="white">
-          <form action="" @submit.prevent="save">
+          <form action="" autocomplete="off" @submit.prevent="save">
             <label for="edit">Edit</label>
             <input type="text" name="edit" id="edit">
-            <button type="submit">save</button><button @click="hide()">cancel</button>
+            <button type="submit">save</button>
           </form>
+          <button @click="hide()">cancel</button>
         </div>
       </div>
     </main>
