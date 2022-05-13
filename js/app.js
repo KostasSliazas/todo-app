@@ -186,7 +186,7 @@ const vm = new Vue({
       if (e.currentTarget.checked) {
         window.localStorage.removeItem('safeMode')
       } else {
-        window.localStorage.setItem('safeMode', 'false')
+        window.localStorage.setItem('safeMode', 0)
       }
     })
   },
