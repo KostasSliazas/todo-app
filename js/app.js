@@ -169,6 +169,7 @@ const vm = new Vue({
       this.$el.querySelector('#edit').focus()
     },
     save () {
+      // prevent from accidentally removing all string and compare is change
       if (this.$el.querySelector('#edit').value.length > 0 && this.todoArray[this.index].todo !== this.$el.querySelector('#edit').value) {
         this.todoArray[this.index].todo = this.$el.querySelector('#edit').value
         this.addToLocalStorage()
@@ -178,6 +179,16 @@ const vm = new Vue({
     hide () {
       this.$el.querySelector('#editor').classList.add('hidden')
     }
+  },
+  mounted () {
+    this.$el.querySelector('#adm').checked = !window.localStorage.getItem('safeMode')
+    this.$el.querySelector('#adm').addEventListener('change', e => {
+      if (e.currentTarget.checked) {
+        window.localStorage.removeItem('safeMode')
+      } else {
+        window.localStorage.setItem('safeMode', 'false')
+      }
+    })
   },
   computed: {
     get: function () {
