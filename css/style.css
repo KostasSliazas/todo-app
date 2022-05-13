@@ -1,7 +1,7 @@
 body {
     font: 16px/1.5 Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
     color: #6c6c7c;
-    background: #eee;
+    background: #eee
 }
 
 #wrap {
@@ -13,23 +13,24 @@ body {
 
 #app {
     display: flex;
-    flex-direction: column;
+    flex-direction: column
 }
 
 #safemode {
     position: absolute;
     left: 4em;
-    top: 0;
+    top: 0
 }
 
 header {
     color: #fff;
     background: #999;
-    position: relative;
+    position: relative
 }
 
+.btns input,
 input[switch] {
-    display: none;
+    display: none
 }
 
 input[switch]+label {
@@ -43,18 +44,18 @@ input[switch]+label {
     cursor: pointer;
     display: inline-block;
     text-align: center;
-    transition: all 0.1s ease-in-out;
+    transition: all .1s ease-in-out;
     position: absolute;
     top: .75em;
     left: .75em;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 input[switch]:checked+label::before {
     color: #fff;
     content: attr(data-on-label);
     right: auto;
-    left: 0;
+    left: 0
 }
 
 input[switch]+label::before {
@@ -67,15 +68,15 @@ input[switch]+label::before {
     top: 0;
     text-align: center;
     overflow: hidden;
-    transition: all 0.1s ease-in-out;
+    transition: all .1s ease-in-out;
     right: 0;
     font-size: .75em;
-    margin: 0 .25em;
+    margin: 0 .25em
 }
 
 input[switch]:checked+label::after {
     left: 1.75em;
-    background: #f7f7f7;
+    background: #f7f7f7
 }
 
 input[switch]+label::after {
@@ -87,12 +88,12 @@ input[switch]+label::after {
     border-radius: 1em;
     height: 1em;
     width: 1em;
-    transition: all 0.1s ease-in-out;
-    top: .25em;
+    transition: all .1s ease-in-out;
+    top: .25em
 }
 
 input[switch]:checked+label {
-    background: #59d113;
+    background: #59d113
 }
 
 body,
@@ -101,12 +102,8 @@ ul {
     margin: 0
 }
 
-footer,
 h1 {
-    text-align: center
-}
-
-h1 {
+    text-align: center;
     font-size: 1em;
     text-transform: uppercase
 }
@@ -114,7 +111,7 @@ h1 {
 footer {
     padding: 1em;
     font-size: .75em;
-    text-align: right;
+    text-align: right
 }
 
 main {
@@ -132,7 +129,7 @@ main form {
     display: flex;
     box-sizing: border-box;
     place-items: center;
-    margin: 0 0 .5em;
+    margin: 0 0 .5em
 }
 
 ul {
@@ -144,7 +141,7 @@ ul {
 ul li {
     display: flex;
     border-top: 1px solid #eee;
-    align-items: center;
+    align-items: center
 }
 
 div>span i,
@@ -154,7 +151,7 @@ ul li:hover {
 
 ul li::before {
     counter-increment: cou;
-    content: counter(cou) '.';
+    content: counter(cou)".";
     display: block;
     box-sizing: border-box;
     text-align: right;
@@ -167,8 +164,8 @@ ul>li:last-child {
     border-bottom: 1px solid #eee
 }
 
-ul li button,
-.danger {
+.danger,
+ul li button {
     background: #842
 }
 
@@ -203,10 +200,6 @@ i {
     min-width: 0;
     margin: 0 auto;
     width: 100%
-}
-
-.btns input {
-    display: none
 }
 
 .btns label {
@@ -252,7 +245,7 @@ i {
 .btns input:checked~label::after {
     border-color: #fff;
     padding: 8px 4px;
-    transition: padding-right .1s, border-right-color 0s .1s linear;
+    transition: padding-right .1s, border-right-color 0s .1s linear
 }
 
 .btn input:checked~label::after {
@@ -269,7 +262,6 @@ button {
     box-sizing: border-box;
     color: #fff;
     opacity: .9;
-    margin: 0;
     font-size: 14px;
     max-height: initial;
     font-variant: small-caps;
@@ -279,7 +271,7 @@ button {
 }
 
 .safety button {
-    margin: 4px;
+    margin: 4px
 }
 
 #editor {
@@ -294,15 +286,16 @@ button {
     place-content: center;
     place-items: center;
     text-align: center;
-    background:rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, .2)
 }
 
 button:hover {
     opacity: 1
 }
 
+#wrap .hidden,
 label[for=todo] {
-    display: none;
+    display: none
 }
 
 #todo,
@@ -325,11 +318,12 @@ button {
 
 .footer {
     border-bottom: 3px solid #999;
-    justify-content: space-between;
+    justify-content: space-between
 }
 
 .footer,
 .time,
+.time>span,
 svg {
     display: flex
 }
@@ -364,12 +358,11 @@ ul li i:hover~.time {
 }
 
 .time>span {
-    display: flex;
     padding: 0 .25em
 }
 
 .time span:nth-child(1)::before {
-    content: 'added:'
+    content: "added:"
 }
 
 .time span:nth-child(1)::before,
@@ -386,7 +379,7 @@ ul li i:hover~.time {
 }
 
 .time span:nth-child(2)::before {
-    content: 'finished:'
+    content: "finished:"
 }
 
 ul li .time span:empty {
@@ -403,7 +396,7 @@ ul li .time span:empty {
 div>span {
     display: flex;
     flex: 1 1 0;
-    min-width: 0;
+    min-width: 0
 }
 
 div>span:last-child {
@@ -412,7 +405,7 @@ div>span:last-child {
 }
 
 div>span:nth-child(2) {
-    justify-content: center;
+    justify-content: center
 }
 
 .toggle label {
@@ -422,17 +415,17 @@ div>span:nth-child(2) {
     cursor: pointer;
     height: 100%;
     width: 100%;
-    color: #394a56;
+    color: #394a56
 }
 
 .white {
     padding: 3em;
-    background: #fff;
+    background: #fff
 }
 
 .safety {
     place-self: center;
-    text-align: center;
+    text-align: center
 }
 
 .safety:not(button) {
@@ -441,21 +434,24 @@ div>span:nth-child(2) {
 
 header+label,
 header~input[type=checkbox] {
-    place-self: center;
+    place-self: center
 }
 
 .toggle-state:checked~ul li button {
-    display: none;
+    display: none
 }
 
 .toggle-state:checked~.safety {
     visibility: hidden;
-    z-index: -1;
+    z-index: -1
 }
 
 @media (max-width:576px) {
     .safety {
         order: 1;
+        display: flex;
+        flex-direction: column;
+        width: 100%
     }
 
     #safemode {
@@ -467,9 +463,9 @@ header~input[type=checkbox] {
         max-height: none
     }
 
-    ul li,
     #todo,
-    button {
+    button,
+    ul li {
         line-height: 3;
         box-sizing: border-box
     }
@@ -480,26 +476,22 @@ header~input[type=checkbox] {
     }
 }
 
-#wrap .hidden {
-    display: none;
-}
-
 #installContainer {
     position: fixed;
     top: 0;
     right: 0;
-    z-index: 1;
+    z-index: 1
 }
 
 #installContainer button {
-    border: 1px solid white;
-    color: white;
-    font-size: 1em;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 1em
 }
 
-@media all and (display-mode: standalone) {
+@media all and (display-mode:standalone) {
     body {
-        background-color: #7c7c6b;
+        background-color: #777
     }
 }
 
@@ -513,17 +505,17 @@ header~input[type=checkbox] {
     main {
         font-size: 10pt;
         box-shadow: none;
-        background: transparent;
-        line-height: 1.5;
+        background: 0 0;
+        line-height: 1.5
     }
 
-    ul li::before,
-    i {
-        order: -1;
+    i,
+    ul li::before {
+        order: -1
     }
 
     i {
-        font-size: 0;
+        font-size: 0
     }
 
     .btns label {
@@ -531,20 +523,20 @@ header~input[type=checkbox] {
     }
 
     .done {
-        text-decoration: none;
+        text-decoration: none
     }
 
     #safemode,
-    input[switch]+label,
-    header+label,
-    header~input,
-    .btns label::before,
+    #todo,
     .btns label::after,
-    h1,
-    footer,
+    .btns label::before,
     .footer,
     button,
-    #todo {
-        display: none;
+    footer,
+    h1,
+    header+label,
+    header~input,
+    input[switch]+label {
+        display: none
     }
 }
