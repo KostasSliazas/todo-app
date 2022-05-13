@@ -43,13 +43,11 @@ input[switch]+label {
     cursor: pointer;
     display: inline-block;
     text-align: center;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2) inset;
     transition: all 0.1s ease-in-out;
     position: absolute;
     top: .75em;
     left: .75em;
     font-family: Arial, Helvetica, sans-serif;
-    box-shadow: 0 1px 0 #777 inset, 0 -1px 0 #eee inset;
 }
 
 input[switch]:checked+label::before {
@@ -61,7 +59,7 @@ input[switch]:checked+label::before {
 
 input[switch]+label::before {
     text-transform: uppercase;
-    color: #b7b7b7;
+    color: #aaa;
     content: attr(data-off-label);
     display: block;
     line-height: 2;
@@ -84,7 +82,7 @@ input[switch]+label::after {
     content: "";
     position: absolute;
     left: .25em;
-    background: #f7f7f7;
+    background: #aaa;
     box-shadow: none;
     border-radius: 1em;
     height: 1em;
