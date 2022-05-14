@@ -1,7 +1,8 @@
 body {
     font: 16px/1.5 Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
     color: #6c6c7c;
-    background: #eee
+    background: #eee;
+    scroll-behavior: smooth;
 }
 
 #wrap {

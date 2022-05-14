@@ -106,6 +106,7 @@ const vm = new Vue({
       } else {
         this.placeholder = 'Empty field!'
       }
+      this.flag = true
     },
     removeTodo (index, elem) {
       this.todoArray.splice(index, 1)
@@ -213,7 +214,11 @@ const vm = new Vue({
   },
   watch: {
     flag () {
-      window.setTimeout(() => document.getElementById('todo').focus(), 60)
+      if (this.flag) {
+        window.setTimeout(() => document.getElementById('todo').focus({
+          preventScroll: true
+        }), 200)
+      }
       this.flag = false
     }
   }
