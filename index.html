@@ -26,10 +26,10 @@
       <input switch="none" class="toggle-state" type="checkbox" id="adm" name="check" checked>
       <label v-if="todoArray.length" for="adm" data-on-label="On" data-off-label="Off"></label>
       <div class="safety" v-if="todoArray.length">
-        <button @click="allDone">all done</button>
-        <button @click="allDFalse">uncheck all</button>
-        <button class="danger" @click="clearLocalStorage()">remove all</button>
-        <button class="danger" @click="removeAllChecked()">remove checked</button>
+        <button @click="dialog(allDone)">all done</button>
+        <button @click="dialog(allDFalse)">uncheck all</button>
+        <button class="danger" @click="dialog(clearLocalStorage)">remove all</button>
+        <button class="danger" @click="dialog(removeAllChecked)">remove checked</button>
       </div>
       <div v-else style="margin-top: 2.25em"></div>
       <form action="" @submit.prevent="addTodo">
@@ -131,7 +131,14 @@
             <input type="text" name="edit" id="edit">
             <button type="submit">save</button>
           </form>
-          <button @click="hide()">cancel</button>
+          <button @click="hide('#editor')">cancel</button>
+        </div>
+      </div>
+      <div id="dialog" class="hidden">
+        <div class="white">
+          <h1>Are you shure?</h1>
+          <button id="yes" class="danger">YES</button>
+          <button id="no">NO</button>
         </div>
       </div>
     </main>

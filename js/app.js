@@ -164,8 +164,19 @@ const vm = new Vue({
       }, 0)
     },
     clearLocalStorage () {
-      window.localStorage.clear()
-      this.todoArray = []
+      const text = 'Clear local storage?'
+      if (window.confirm(text)) {
+        window.localStorage.clear()
+        this.todoArray = []
+      }
+    },
+    dialog (calback) {
+      this.$el.querySelector('#dialog').classList.remove('hidden')
+      this.$el.querySelector('#yes').onclick = () => {
+        calback()
+        this.hide('#dialog')
+      }
+      this.$el.querySelector('#no').onclick = () => this.hide('#dialog')
     },
     removeAllChecked () {
       vm.todoArray = this.todoArray.filter(e => typeof e.done !== 'undefined' && !e.done).map(e => {
@@ -185,10 +196,10 @@ const vm = new Vue({
         this.todoArray[this.index].todo = this.$el.querySelector('#edit').value
         this.addToLocalStorage()
       }
-      this.hide()
+      this.hide('#editor')
     },
-    hide () {
-      this.$el.querySelector('#editor').classList.add('hidden')
+    hide (elem) {
+      this.$el.querySelector(elem).classList.add('hidden')
     },
     refresh () {
       this.placeholder = 'Type here..'
