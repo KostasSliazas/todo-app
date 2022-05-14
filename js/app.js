@@ -83,18 +83,28 @@ const vm = new Vue({
     timeFin: '',
     flag: false,
     index: 0,
+    placeholder: 'Type here..',
     todoArray: typeof (Storage) !== 'undefined' ? JSON.parse(window.localStorage.getItem('todo-app')) || [] : []
   },
   methods: {
     addTodo () {
       if (this.todo.trim().length > 0) {
-        this.todoArray.push({
-          todo: this.todo.replace(/,/g, '.').trim(),
-          done: false,
-          timeAdd: this.setTime()
-        })
-        this.todo = ''
-        this.addToLocalStorage()
+        const values = [].concat.apply([], this.todoArray.filter(e => isNaN(e.todo)).map(e => e.todo))
+        if (values.indexOf(this.todo.trim()) === -1) {
+          this.todoArray.push({
+            todo: this.todo.replace(/,/g, '.').trim(),
+            done: false,
+            timeAdd: this.setTime()
+          })
+          this.addToLocalStorage()
+          this.todo = ''
+          this.refresh()
+        } else {
+          this.todo = ''
+          this.placeholder = 'Value already exists!'
+        }
+      } else {
+        this.placeholder = 'Empty field!'
       }
     },
     removeTodo (index, elem) {
@@ -178,6 +188,9 @@ const vm = new Vue({
     },
     hide () {
       this.$el.querySelector('#editor').classList.add('hidden')
+    },
+    refresh () {
+      this.placeholder = 'Type here..'
     }
   },
   mounted () {
