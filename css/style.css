@@ -1,6 +1,6 @@
 body {
     font: 16px/1.5 Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
-    color: #6c6c7c;
+    color: #656577;
     background: #eee;
     scroll-behavior: smooth;
 }
@@ -145,6 +145,10 @@ ul li {
     align-items: center
 }
 
+ul>li:last-child {
+    border-bottom: 1px solid #eee
+}
+
 div>span i,
 ul li:hover {
     background: #fff
@@ -161,13 +165,13 @@ ul li::before {
     max-width: 2em
 }
 
-ul>li:last-child {
-    border-bottom: 1px solid #eee
-}
-
 .danger,
 ul li button {
     background: #842
+}
+
+#todo+button {
+    margin: 0;
 }
 
 i {
@@ -175,7 +179,7 @@ i {
     height: 24px;
     text-align: center;
     margin: 4px;
-    border: 1px solid #eee;
+    border: 1px solid #777;
     background: #fff;
     box-sizing: border-box;
     font-size: 12px;
@@ -227,7 +231,7 @@ i {
 }
 
 .btns label::before {
-    border: 1px solid #eee;
+    border: 1px solid #777;
     padding: 13px;
     background: #fff
 }
@@ -263,17 +267,17 @@ button {
     box-sizing: border-box;
     color: #fff;
     opacity: .9;
-    font-size: 14px;
     max-height: initial;
-    font-variant: small-caps;
     border-radius: 2px;
     margin: 0 4px;
+    text-transform: capitalize;
     letter-spacing: 1px
 }
 
 .safety button {
     margin: 4px
 }
+
 #dialog,
 #editor {
     position: fixed;
@@ -301,7 +305,7 @@ label[for=todo] {
 
 #todo,
 .time>span {
-    border: 1px solid #eee;
+    border: 1px solid #777;
     box-sizing: border-box
 }
 
@@ -312,13 +316,12 @@ button {
 }
 
 #todo {
+    font-size: 13px;
     min-width: 0;
     flex: 1 1 auto;
-    border-right: 0
 }
 
 .footer {
-    border-bottom: 3px solid #999;
     justify-content: space-between
 }
 
@@ -453,6 +456,10 @@ header~input[type=checkbox] {
         display: flex;
         flex-direction: column;
         width: 100%
+    }
+
+    #todo+button {
+        margin: 8px 0;
     }
 
     #safemode {
