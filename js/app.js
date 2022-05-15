@@ -164,11 +164,8 @@ const vm = new Vue({
       }, 0)
     },
     clearLocalStorage () {
-      const text = 'Clear local storage?'
-      if (window.confirm(text)) {
-        window.localStorage.clear()
-        this.todoArray = []
-      }
+      window.localStorage.clear()
+      this.todoArray = []
     },
     dialog (calback) {
       this.$el.querySelector('#dialog').classList.remove('hidden')
