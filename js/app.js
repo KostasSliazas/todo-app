@@ -212,14 +212,6 @@ const vm = new Vue({
       }
     })
   },
-  computed: {
-    get: function () {
-      return this.todoArray
-    },
-    set: function (newVal) {
-      this.todoArray = newVal
-    }
-  },
   watch: {
     flag () {
       if (this.flag) {
