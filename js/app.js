@@ -84,9 +84,19 @@ const vm = new Vue({
     flag: false,
     index: 0,
     placeholder: 'Type here..',
-    todoArray: typeof (Storage) !== 'undefined' ? JSON.parse(window.localStorage.getItem('todo-app')) || [] : []
+    todoArray: []
   },
   methods: {
+    parser () {
+      try {
+        return JSON.parse(window.localStorage.getItem('todo-app'))
+      } catch (e) {
+        // console.log(e)
+        // remove all wrong values and reload just in case to not break app
+        window.localStorage.removeItem('todo-app')
+        window.location.reload()
+      }
+    },
     addTodo () {
       if (this.todo.trim().length > 0) {
         const values = [].concat.apply([], this.todoArray.filter(e => isNaN(e.todo)).map(e => e.todo))
@@ -203,6 +213,7 @@ const vm = new Vue({
     }
   },
   mounted () {
+    this.todoArray = typeof (Storage) !== 'undefined' ? this.parser() || [] : []
     this.$el.querySelector('#adm').checked = !window.localStorage.getItem('safeMode')
     this.$el.querySelector('#adm').addEventListener('change', e => {
       if (e.currentTarget.checked) {
