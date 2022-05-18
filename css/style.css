@@ -131,11 +131,11 @@ main form {
     box-sizing: border-box;
     place-items: center;
     position: sticky;
-    top: 1.5em;
+    top: 2em;
     z-index: 1;
     background: #f9f9f9;
-    padding: 1em;
-    box-shadow: 0 0 3px #00000040;
+    padding: .25em 1em 1em;
+    box-shadow: 0 1px 1px #00000040;
     margin: 0 -0.5em;
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
@@ -143,6 +143,7 @@ main form {
 
 .toggle-state:checked~form {
     top: 0;
+    padding: 1em;
 }
 
 ul {
@@ -449,10 +450,10 @@ div>span:nth-child(2) {
     text-align: center;
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 1;
     background: #f9f9f9;
-    box-shadow: 0 0 3px #00000040;
-    margin: 0 -12px;
+    box-shadow: 0 1px 1px #00000040;
+    margin: 0 -8px;
 }
 
 .safety:not(button) {
@@ -470,16 +471,12 @@ header~input[type=checkbox] {
 }
 
 @media (max-width:576px) {
-    .safety button:nth-child(odd) {
+    .safety button:first-child {
         display: none;
     }
 
-    .safety {
-        box-shadow: none;
-    }
-
-    #todo+button {
-        margin: 8px 4px 8px 8px;
+    .safety button {
+        line-height: 2;
     }
 
     .btns,
