@@ -1,7 +1,19 @@
 /* eslint-disable no-new */
 const divInstall = document.getElementById('installContainer')
 const butInstall = document.getElementById('butInstall')
+const loader = async () => {
+  const rawResponse = await window.fetch('https://manoterasa.delfi.lt/vote.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }, // this line is important, if this content-type is not set it wont work
+    body: 'id=33'
+  })
+  const content = await rawResponse.json()
 
+  console.log(content)
+}
+loader()
 /* Put code here */
 window.addEventListener('beforeinstallprompt', (event) => {
   // Prevent the mini-infobar from appearing on mobile.
