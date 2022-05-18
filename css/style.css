@@ -136,7 +136,7 @@ main form {
     background: #f9f9f9;
     padding: 1em;
     box-shadow: 0 0 3px #00000040;
-    margin: 0 -0.75em;
+    margin: 0 -0.5em;
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
 }
@@ -147,9 +147,10 @@ main form {
 
 ul {
     list-style: none;
-    padding: 0;
+    padding: 1em 0;
     display: flex;
     flex-flow: column-reverse;
+    background: #fefefe;
     counter-reset: cou
 }
 
@@ -165,7 +166,7 @@ ul>li:last-child {
 
 div>span i,
 ul li:hover {
-    background: #fff
+    background: #f4f4f4;
 }
 
 ul li::before {
