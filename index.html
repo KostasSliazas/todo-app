@@ -31,7 +31,7 @@
         <button class="danger" @click="dialog(clearLocalStorage)">remove all</button>
         <button class="danger" @click="dialog(removeAllChecked)">remove checked</button>
       </div>
-      <div v-else style="margin-top: 2.25em"></div>
+      <!-- <div v-else style="margin-top: 2.25em"></div> -->
       <form action="" @submit.prevent="addTodo">
         <label for="todo">Todo</label>
         <input v-model.trim="todo" v-on:blur="refresh" type="text" name="todo" id="todo" :placeholder="placeholder">

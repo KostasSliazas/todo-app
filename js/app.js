@@ -116,6 +116,9 @@ const vm = new Vue({
       } else {
         this.placeholder = 'Empty field!'
       }
+      window.scrollTo({
+        top: 0
+      })
       this.flag = true
     },
     removeTodo (index, elem) {
