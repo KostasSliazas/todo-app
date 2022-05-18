@@ -151,12 +151,12 @@ ul {
     padding: 1em 0;
     display: flex;
     flex-flow: column-reverse;
-    background: #fefefe;
     counter-reset: cou
 }
 
 ul li {
     display: flex;
+    background: #fefefe;
     border-top: 1px solid #eee;
     align-items: center
 }
