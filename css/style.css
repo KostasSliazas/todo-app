@@ -146,6 +146,8 @@ main form {
 ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-flow: column-reverse;
     counter-reset: cou
 }
 
