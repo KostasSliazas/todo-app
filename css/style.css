@@ -19,7 +19,7 @@ body {
 
 #safemode {
     position: absolute;
-    left: 4em;
+    left: 3.5em;
     top: 0
 }
 
@@ -469,12 +469,12 @@ header~input[type=checkbox] {
         display: none;
     }
 
-    #todo+button {
-        margin: 8px 4px 8px 8px;
+    .safety {
+        box-shadow: none;
     }
 
-    #safemode {
-        display: none
+    #todo+button {
+        margin: 8px 4px 8px 8px;
     }
 
     .btns,
