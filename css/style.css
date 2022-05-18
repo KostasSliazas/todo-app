@@ -161,10 +161,6 @@ ul li {
     align-items: center
 }
 
-ul>li:last-child {
-    border-bottom: 1px solid #eee
-}
-
 div>span i,
 ul li:hover {
     background: #f4f4f4;
