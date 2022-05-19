@@ -29,6 +29,7 @@ body {
 header {
     color: #fff;
     background: #999;
+    margin: -.5em -.5em 0;
     position: relative
 }
 
@@ -50,8 +51,8 @@ input[switch]+label {
     text-align: center;
     transition: all .1s ease-in-out;
     position: absolute;
-    top: .75em;
-    left: .75em;
+    top: 0.25em;
+    left: 0.25em;
     font-family: Arial, Helvetica, sans-serif
 }
 
