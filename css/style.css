@@ -351,6 +351,7 @@ svg {
     text-align: center;
     margin: 0 auto;
     position: relative;
+    filter: contrast(0.5);
     place-items: center
 }
 
