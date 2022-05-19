@@ -7,23 +7,17 @@ body {
     color: #656577;
     background: #eee;
     overflow-x: hidden;
-    height: 100vh;
-    display: flex;
 }
 
 #wrap {
     padding: 1em;
     margin: 0 auto;
     max-width: 700px;
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
 }
 
 #app {
     display: flex;
     flex-direction: column;
-    width: 100%;
 }
 
 #safemode {
