@@ -13,11 +13,13 @@ body {
     padding: 1em;
     margin: 0 auto;
     max-width: 700px;
+    min-height: 480px;
 }
 
 #app {
     display: flex;
     flex-direction: column;
+    min-height: inherit;
 }
 
 #safemode {
@@ -29,7 +31,6 @@ body {
 header {
     color: #fff;
     background: #999;
-    margin: -.5em -.5em 0;
     position: relative
 }
 
@@ -115,7 +116,6 @@ h1 {
 
 main {
     background: #f9f9f9;
-    padding: .5em;
     box-shadow: 0 0 2px #aaa;
     user-select: none;
     line-height: 2;
@@ -134,7 +134,6 @@ main form {
     background: #f9f9f9;
     padding: .25em 1em 1em;
     box-shadow: 0 1px 1px #00000040;
-    margin: 0 -0.5em;
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
 }
@@ -452,7 +451,6 @@ div>span:nth-child(2) {
     z-index: 1;
     background: #f9f9f9;
     box-shadow: 0 1px 1px #00000040;
-    margin: 0 -.5em;
     display: flex;
     place-content: center;
 }
