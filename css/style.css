@@ -122,7 +122,7 @@ main {
     position: relative
 }
 
-main form {
+main > form {
     min-width: 0;
     white-space: nowrap;
     display: flex;
@@ -145,7 +145,7 @@ main form {
 
 ul {
     list-style: none;
-    padding: 1em 0;
+    padding: 1em;
     display: flex;
     flex-flow: column-reverse;
     counter-reset: cou
@@ -301,7 +301,7 @@ button {
     place-items: center;
     text-align: center;
     z-index: 5;
-    background: rgba(0, 0, 0, .2)
+    background: rgba(0, 0, 0, .5)
 }
 
 button:hover {
@@ -441,6 +441,7 @@ div>span:nth-child(2) {
 
 .white {
     padding: 3em;
+    border-radius: 1em;
     background: #fff
 }
 
