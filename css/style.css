@@ -315,6 +315,7 @@ label[for=todo] {
 
 #todo,
 .time>span {
+    background: #fff;
     border: 1px solid #777;
     box-sizing: border-box
 }
@@ -359,7 +360,7 @@ svg {
     top: 0;
     right: 0;
     z-index: -1;
-    background: #fff;
+    background: #eee;
     box-shadow: 0 0 2px #777;
     padding: 1em;
     flex-direction: column;
