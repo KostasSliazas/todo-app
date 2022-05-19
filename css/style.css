@@ -118,12 +118,6 @@ h1 {
     text-transform: uppercase
 }
 
-footer {
-    padding: 1em;
-    font-size: .75em;
-    text-align: right
-}
-
 main {
     background: #f9f9f9;
     padding: .5em;
@@ -343,14 +337,14 @@ button {
     flex: 1 1 auto;
 }
 
-.footer {
+footer {
     white-space: nowrap;
     margin-top: auto;
     flex-direction: row;
     justify-content: space-between
 }
 
-.footer,
+footer,
 .time,
 .time>span,
 svg {
@@ -559,7 +553,7 @@ header~input[type=checkbox] {
     #todo,
     .btns label::after,
     .btns label::before,
-    .footer,
+    footer,
     button,
     footer,
     h1,

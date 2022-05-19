@@ -119,11 +119,11 @@
           </g>
         </svg>
       </div>
-      <div class="footer">
+      <footer>
         <span><i>{{todoArray.length}}</i> :total</span>
         <span>left todo: <i>{{counter()}}</i></span>
         <span title="Total sum of entered numbers">counter: &euro;<i>{{counterNumbers()}}</i></span>
-      </div>
+      </footer>
       <div id="editor" class="hidden">
         <div class="white">
           <form action="" autocomplete="off" @submit.prevent="save">
@@ -142,9 +142,6 @@
         </div>
       </div>
     </main>
-    <!-- <footer>
-      by Kostas Šliažas
-    </footer> -->
     <div id="installContainer" class="hidden">
       <button id="butInstall" type="button">
         Install
