@@ -116,10 +116,13 @@ const vm = new Vue({
       } else {
         this.placeholder = 'Empty field!'
       }
+      this.scrollToTop()
+      this.flag = true
+    },
+    scrollToTop () {
       window.scrollTo({
         top: 0
       })
-      this.flag = true
     },
     removeTodo (index, elem) {
       this.todoArray.splice(index, 1)

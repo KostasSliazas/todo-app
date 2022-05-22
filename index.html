@@ -32,9 +32,9 @@
         <button class="danger" @click="dialog(removeAllChecked)">remove checked</button>
       </div>
       <!-- <div v-else style="margin-top: 2.25em"></div> -->
-      <form action="" @submit.prevent="addTodo">
+      <form autocomplete="off" action="javascript:void(0);" @submit.prevent="addTodo">
         <label for="todo">Todo</label>
-        <input v-model.trim="todo" v-on:blur="refresh" type="text" name="todo" id="todo" :placeholder="placeholder">
+        <input v-model.trim="todo" v-on:blur="refresh" @focus="scrollToTop" type="text" name="todo" id="todo" :placeholder="placeholder">
         <button type="submit" name="button">add</button>
       </form>
       <ul v-if="todoArray.length">
