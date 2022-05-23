@@ -308,14 +308,19 @@ label[for=todo] {
     display: none
 }
 
+#todo:invalid {
+    box-shadow: 0 0 1px #777 inset, 0 0 0 1px #f00;
+}
+
 #todo,
 .time>span {
     border: 0;
     box-sizing: border-box;
     box-shadow: 0 0 1px #777 inset, 0 0 0 1px #fff;
 }
-input[switch] + label,
-input[switch] + label::after,
+
+input[switch]+label,
+input[switch]+label::after,
 .btns label::before,
 #todo,
 button {

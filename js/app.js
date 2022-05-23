@@ -84,6 +84,7 @@ const vm = new Vue({
     flag: false,
     index: 0,
     placeholder: 'Type here..',
+    required: false,
     todoArray: []
   },
   methods: {
@@ -114,7 +115,9 @@ const vm = new Vue({
           this.placeholder = 'Value already exists!'
         }
       } else {
+        this.required = true
         this.placeholder = 'Empty field!'
+        return
       }
       this.scrollToTop()
       this.flag = true
@@ -215,6 +218,7 @@ const vm = new Vue({
       this.$el.querySelector(elem).classList.add('hidden')
     },
     refresh () {
+      this.required = false
       this.placeholder = 'Type here..'
     }
   },
