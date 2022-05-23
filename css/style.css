@@ -10,6 +10,7 @@ body {
 }
 
 #wrap {
+    padding: 0 0 3em 0;
     margin: 0 auto;
     max-width: 700px;
     min-height: 480px;
