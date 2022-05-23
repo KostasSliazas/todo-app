@@ -376,11 +376,12 @@ svg {
 
 ul li i:hover~.time {
     opacity: 1;
-    transition: .1s .2s opacity;
+    transition: .1s .4s opacity;
     z-index: 3
 }
 
 .time>span {
+    background: #fff;
     padding: 0 .25em
 }
 
