@@ -44,7 +44,6 @@ input[switch]+label {
     width: 3em;
     height: 1.5em;
     background: #ddd;
-    border-radius: 1em;
     padding: 0;
     cursor: pointer;
     display: inline-block;
@@ -90,7 +89,6 @@ input[switch]+label::after {
     left: .25em;
     background: #aaa;
     box-shadow: none;
-    border-radius: 1em;
     height: 1em;
     width: 1em;
     transition: all .1s ease-in-out;
@@ -175,11 +173,7 @@ ul li::before {
 
 .danger,
 ul li button {
-    background: #842
-}
-
-#todo+button {
-    margin: 0 4px;
+    background: #842;
 }
 
 i {
@@ -187,7 +181,7 @@ i {
     height: 24px;
     text-align: center;
     margin: 4px;
-    border: 1px solid #777;
+    border: 1px solid #bbb;
     background: #fff;
     box-sizing: border-box;
     font-size: 12px;
@@ -239,7 +233,7 @@ i {
 }
 
 .btns label::before {
-    border: 1px solid #777;
+    border: 1px solid #bbb;
     padding: 13px;
     background: #fff
 }
@@ -262,9 +256,14 @@ i {
 }
 
 .btn input:checked~label::after {
-    background: #777;
+    background: #bbb;
     padding: 4px;
     border-radius: 14px
+}
+
+#todo+button {
+    margin: 0 4px;
+    font-size: 13px;
 }
 
 button {
@@ -275,11 +274,9 @@ button {
     box-sizing: border-box;
     color: #fff;
     opacity: .9;
-    max-height: initial;
-    border-radius: 2px;
-    margin: 0 4px;
     text-transform: capitalize;
-    letter-spacing: 1px
+    letter-spacing: 1px;
+    margin: 0 4px;
 }
 
 .safety button {
@@ -313,15 +310,17 @@ label[for=todo] {
 
 #todo,
 .time>span {
-    background: #fff;
-    border: 1px solid #777;
-    box-sizing: border-box
+    border: 0;
+    box-sizing: border-box;
+    box-shadow: 0 0 1px #777 inset, 0 0 0 1px #fff;
 }
-
+input[switch] + label,
+input[switch] + label::after,
+.btns label::before,
 #todo,
 button {
+    border-radius: 3px;
     line-height: inherit;
-    padding: 0 4px
 }
 
 #todo {
@@ -360,7 +359,7 @@ svg {
     right: 0;
     z-index: -1;
     background: #eee;
-    box-shadow: 0 0 2px #777;
+    box-shadow: 0 0 2px #bbb;
     padding: 1em;
     flex-direction: column;
     white-space: nowrap;
