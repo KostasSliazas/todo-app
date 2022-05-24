@@ -112,6 +112,7 @@ const vm = new Vue({
           this.refresh()
         } else {
           this.todo = ''
+          this.required = true
           this.placeholder = 'Value already exists!'
         }
       } else {
@@ -185,6 +186,8 @@ const vm = new Vue({
     clearLocalStorage () {
       window.localStorage.clear()
       this.todoArray = []
+      // focus #todo when list is empty
+      if (!this.todoArray.length) this.flag = true
     },
     dialog (calback) {
       this.$el.querySelector('#dialog').classList.remove('hidden')
@@ -232,6 +235,8 @@ const vm = new Vue({
         window.localStorage.setItem('safeMode', 0)
       }
     })
+    // focus #todo when list is empty
+    if (!this.todoArray.length) this.flag = true
   },
   watch: {
     flag () {

@@ -34,7 +34,7 @@
       <!-- <div v-else style="margin-top: 2.25em"></div> -->
       <form autocomplete="off" action="javascript:void(0);" @submit.prevent="addTodo">
         <label for="todo">Todo</label>
-        <input v-model.trim="todo" @blur="refresh" @click="scrollToTop" type="text" name="todo" id="todo" :placeholder="placeholder" :required="required">
+        <input v-model.trim="todo" @click="refresh" @blur="refresh" @click="scrollToTop" type="text" name="todo" id="todo" :placeholder="placeholder" :required="required">
         <button type="submit" name="button">add</button>
       </form>
       <ul v-if="todoArray.length">
