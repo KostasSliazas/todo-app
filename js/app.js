@@ -103,7 +103,7 @@ const vm = new Vue({
         const values = [].concat.apply([], this.todoArray.filter(e => isNaN(e.todo)).map(e => e.todo))
         if (values.indexOf(this.todo.trim()) === -1) {
           this.todoArray.push({
-            todo: this.todo.replace(/,/g, '.').trim(),
+            todo: this.todo.replace(/,/g, '.').trim().replace(/\s+/g, ' ').trim(),
             done: false,
             timeAdd: this.setTime()
           })
@@ -212,7 +212,7 @@ const vm = new Vue({
     save () {
       // prevent from accidentally removing all string and compare is change
       if (this.$el.querySelector('#edit').value.length > 0 && this.todoArray[this.index].todo !== this.$el.querySelector('#edit').value) {
-        this.todoArray[this.index].todo = this.$el.querySelector('#edit').value
+        this.todoArray[this.index].todo = this.$el.querySelector('#edit').value.replace(/\s+/g, ' ').trim()
         this.addToLocalStorage()
       }
       this.hide('#editor')
