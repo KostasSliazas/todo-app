@@ -112,7 +112,6 @@ const vm = new Vue({
           this.refresh()
         } else {
           this.todo = ''
-          this.required = true
           this.placeholder = 'Value already exists!'
         }
       } else {
@@ -128,10 +127,6 @@ const vm = new Vue({
         top: 0
       })
     },
-    removeTodo (index, elem) {
-      this.todoArray.splice(index, 1)
-      this.addToLocalStorage(index, elem)
-    },
     allDone () {
       this.todoArray.forEach(todo => {
         todo.done = true
@@ -142,7 +137,7 @@ const vm = new Vue({
     allDFalse () {
       this.todoArray.forEach(todo => {
         todo.done = false
-        todo.timeFin = ''
+        delete todo.timeFin
       })
       typeof (Storage) !== 'undefined' && window.localStorage.setItem('todo-app', JSON.stringify(this.todoArray))
     },
@@ -153,7 +148,8 @@ const vm = new Vue({
       // if array exist (not deleted) set done at first
       if (this.todoArray[index]) {
         this.todoArray[index].done = elem.target.checked
-        this.todoArray[index].timeFin = this.todoArray[index].done ? this.setTime() : ''
+        if (this.todoArray[index].done) this.todoArray[index].timeFin = this.setTime()
+        else delete this.todoArray[index].timeFin
       }
       // rewrite all local storage
       typeof (Storage) !== 'undefined' && window.localStorage.setItem('todo-app', JSON.stringify(this.todoArray))
@@ -202,6 +198,10 @@ const vm = new Vue({
         return e
       })
       this.addToLocalStorage()
+    },
+    removeTodo (index, elem) {
+      this.todoArray.splice(index, 1)
+      this.addToLocalStorage(index, elem)
     },
     edit (index) {
       this.index = index

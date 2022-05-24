@@ -39,7 +39,7 @@
       </form>
       <ul v-if="todoArray.length">
         <li v-for="(todo, index) in todoArray">
-          <div class="btns"><input @click="e=>addToLocalStorage(index, e)" type="checkbox" name="done"
+          <div class="btns"><input @click="addToLocalStorage(index, $event)" type="checkbox" name="done"
               :id="'input-' + index" v-model="todo.done">
             <label :class="{ done : todo.done }" :for="'input-' + index">{{todo.todo}}
             </label>
@@ -49,8 +49,8 @@
             <span>{{todo.timeAdd}}</span>
             <span>{{todo.timeFin}}</span>
           </span>
-          <button @click="e=>edit(index, e)">edit</button>
-          <button @click="e=>removeTodo(index, e)">remove</button>
+          <button @click="edit(index, $event)">edit</button>
+          <button @click="removeTodo(index, $event)">remove</button>
         </li>
       </ul>
       <div v-else>
