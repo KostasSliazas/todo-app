@@ -288,6 +288,10 @@ button[name="button"] {
     margin-right: 0;
 }
 
+.important {
+    background: #ff95df;
+}
+
 #dialog,
 #editor {
     position: fixed;

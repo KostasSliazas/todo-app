@@ -144,6 +144,11 @@ const vm = new Vue({
     counter () {
       return this.todoArray.filter(todo => todo.done === false).length
     },
+    highlight (index, elem) {
+      this.todoArray[index].important = !this.todoArray[index].important
+      elem.target.parentElement.className = this.todoArray[index].important ? 'important' : ''
+      this.addToLocalStorage()
+    },
     addToLocalStorage (index, elem) {
       // if array exist (not deleted) set done at first
       if (this.todoArray[index]) {

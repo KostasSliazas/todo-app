@@ -44,7 +44,7 @@
             <label :class="{ done : todo.done }" :for="'input-' + index">{{todo.todo}}
             </label>
           </div>
-          <i>i</i>
+          <i @click="highlight(index, $event)" :class="{ important : todo.important }">i</i>
           <span class="time" v-if="todo.timeAdd||todo.timeFin">
             <span>{{todo.timeAdd}}</span>
             <span>{{todo.timeFin}}</span>
