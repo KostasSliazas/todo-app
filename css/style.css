@@ -129,7 +129,7 @@ main>form {
     position: sticky;
     top: 2rem;
     z-index: 1;
-    background: #f9f9f9;
+    background: #fefefe;
     padding: .25em 1em 1em;
     box-shadow: 0 1px 1px #00000040;
     border-bottom-left-radius: 1em;
@@ -151,14 +151,13 @@ ul {
 
 ul li {
     display: flex;
-    background: #fefefe;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #ddd;
     place-content: center;
 }
 
 div>span i,
 ul li:hover {
-    background: #f4f4f4;
+    background: #fefefe;
 }
 
 ul li::before {
@@ -266,11 +265,6 @@ i {
     border-radius: 14px
 }
 
-#todo+button {
-    margin: 0 4px;
-    font-size: 13px;
-}
-
 button {
     cursor: pointer;
     border: 0;
@@ -282,11 +276,16 @@ button {
     text-transform: capitalize;
     letter-spacing: 1px;
     margin: 0 4px;
+    font-size: 13px;
     align-self: center;
 }
 
-.safety button {
-    margin: 4px
+:not(.safety) ul button:last-child {
+    margin-right: 0;
+}
+
+button[name="button"] {
+    margin-right: 0;
 }
 
 #dialog,
@@ -460,8 +459,9 @@ div>span:nth-child(2) {
     position: sticky;
     top: 0;
     z-index: 1;
-    background: #f9f9f9;
+    background: #fefefe;
     display: flex;
+    padding: 4px 0;
     place-content: center;
 }
 
