@@ -146,7 +146,7 @@ const vm = new Vue({
     },
     highlight (index, elem) {
       this.todoArray[index].important = !this.todoArray[index].important
-      elem.target.parentElement.className = this.todoArray[index].important ? 'important' : ''
+      elem.target.className = this.todoArray[index].important ? 'important' : ''
       this.addToLocalStorage()
     },
     addToLocalStorage (index, elem) {
