@@ -148,7 +148,7 @@ const vm = new Vue({
       elem.preventDefault()
       this.todoArray[index].important = !this.todoArray[index].important
       elem.target.className = this.todoArray[index].important ? 'important' : ''
-      this.addToLocalStorage(index, elem)
+      this.addToLocalStorage()
     },
     addToLocalStorage (index, elem) {
       // if array exist (not deleted) set done at first
