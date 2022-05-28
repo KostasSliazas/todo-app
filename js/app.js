@@ -147,7 +147,7 @@ const vm = new Vue({
     highlight (index, elem) {
       this.todoArray[index].important = !this.todoArray[index].important
       elem.target.className = this.todoArray[index].important ? 'important' : ''
-      this.addToLocalStorage()
+      this.addToLocalStorage(index, elem)
     },
     addToLocalStorage (index, elem) {
       // if array exist (not deleted) set done at first
