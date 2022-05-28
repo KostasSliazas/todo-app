@@ -145,6 +145,7 @@ const vm = new Vue({
       return this.todoArray.filter(todo => todo.done === false).length
     },
     highlight (index, elem) {
+      elem.preventDefault()
       this.todoArray[index].important = !this.todoArray[index].important
       elem.target.className = this.todoArray[index].important ? 'important' : ''
       this.addToLocalStorage(index, elem)
