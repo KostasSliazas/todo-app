@@ -146,6 +146,7 @@ const vm = new Vue({
     },
     highlight (index, elem) {
       elem.preventDefault()
+      elem.stopPropagation()
       this.todoArray[index].important = !this.todoArray[index].important
       elem.target.className = this.todoArray[index].important ? 'important' : ''
       this.addToLocalStorage()
