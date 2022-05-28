@@ -44,8 +44,8 @@
             <label :class="{ done : todo.done }" :for="'input-' + index">{{todo.todo}}
             </label>
           </div>
-          <i @click="highlight(index, $event)" :class="{ important : todo.important }">i</i>
-          <span class="time" v-if="todo.timeAdd||todo.timeFin">
+          <i @dblclick="highlight(index, $event)" :class="{ important : todo.important }" title="Double click to highlight">i</i>
+          <span :class="{ important : todo.important }" class="time" v-if="todo.timeAdd||todo.timeFin">
             <span>{{todo.timeAdd}}</span>
             <span>{{todo.timeFin}}</span>
           </span>

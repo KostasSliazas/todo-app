@@ -289,7 +289,7 @@ button[name="button"] {
 }
 
 .important {
-    background: #ff95df;
+    background: #ff95df !important;
 }
 
 #dialog,

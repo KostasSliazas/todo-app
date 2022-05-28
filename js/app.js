@@ -76,7 +76,7 @@ window.addEventListener('appinstalled', (event) => {
 const vm = new Vue({
   el: '#app',
   data: {
-    lang: 'lt',
+    lang: 'lt-LT',
     title: 'Todo app',
     todo: '',
     timeAdd: '',
@@ -234,11 +234,7 @@ const vm = new Vue({
     this.todoArray = typeof (Storage) !== 'undefined' ? this.parser() || [] : []
     this.$el.querySelector('#adm').checked = !window.localStorage.getItem('safeMode')
     this.$el.querySelector('#adm').addEventListener('change', e => {
-      if (e.currentTarget.checked) {
-        window.localStorage.removeItem('safeMode')
-      } else {
-        window.localStorage.setItem('safeMode', 0)
-      }
+      e.currentTarget.checked ? window.localStorage.removeItem('safeMode') : window.localStorage.setItem('safeMode', 0)
     })
     // focus #todo when list is empty
     if (!this.todoArray.length) this.flag = true
