@@ -45,7 +45,7 @@
             </label>
           </div>
           <i @dblclick="highlight(index, $event)" :class="{ important : todo.important }" title="Double click to highlight">i</i>
-          <span :class="{ important : todo.important }" class="time" v-if="todo.timeAdd||todo.timeFin">
+          <span class="time" v-if="todo.timeAdd||todo.timeFin">
             <span>{{todo.timeAdd}}</span>
             <span>{{todo.timeFin}}</span>
           </span>
