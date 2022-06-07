@@ -102,7 +102,7 @@ const vm = new Vue({
       if (this.todo.trim().length > 0) {
         const values = [].concat.apply([], this.todoArray.filter(e => isNaN(e.todo)).map(e => e.todo))
         if (values.indexOf(this.todo.trim()) === -1) {
-          this.todoArray.push({
+          this.todoArray.unshift({
             todo: this.todo.replace(/,/g, '.').trim().replace(/\s+/g, ' ').trim(),
             done: false,
             timeAdd: this.setTime()
@@ -123,9 +123,7 @@ const vm = new Vue({
       this.flag = true
     },
     scrollToTop () {
-      window.scrollTo({
-        top: 0
-      })
+      document.body.scrollIntoView({ behavior: 'smooth' })
     },
     allDone () {
       this.todoArray.forEach(todo => {

@@ -145,7 +145,7 @@ ul {
     list-style: none;
     padding: 1em;
     display: flex;
-    flex-flow: column-reverse;
+    flex-flow: column;
     counter-reset: cou
 }
 
@@ -533,10 +533,8 @@ header~input[type=checkbox] {
     .btns,
     body,
     main {
-        font-size: 10pt;
         box-shadow: none;
         background: 0 0;
-        line-height: 1.5
     }
 
     i,
