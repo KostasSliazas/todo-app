@@ -102,7 +102,7 @@ const vm = new Vue({
       if (this.todo.trim().length > 0) {
         const values = [].concat.apply([], this.todoArray.filter(e => isNaN(e.todo)).map(e => e.todo))
         if (values.indexOf(this.todo.trim()) === -1) {
-          this.todoArray.unshift({
+          this.todoArray.push({
             todo: this.todo.replace(/,/g, '.').trim().replace(/\s+/g, ' ').trim(),
             done: false,
             timeAdd: this.setTime()
@@ -140,14 +140,14 @@ const vm = new Vue({
       typeof (Storage) !== 'undefined' && window.localStorage.setItem('todo-app', JSON.stringify(this.todoArray))
     },
     counter () {
-      return this.todoArray.filter(todo => todo.done === false).length
+      return this.todoArray.filter(todo => !todo.done).length
     },
     highlight (index, elem) {
       elem.preventDefault()
       elem.stopPropagation()
       this.todoArray[index].important = !this.todoArray[index].important
       elem.target.className = this.todoArray[index].important ? 'important' : ''
-      this.addToLocalStorage()
+      this.addToLocalStorage(index, elem)
     },
     addToLocalStorage (index, elem) {
       // if array exist (not deleted) set done at first
